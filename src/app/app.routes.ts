@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { InicioComponent } from './pages/inicio/inicio.component';
+import { InicioComponent } from './pages/inicio/inicio/inicio.component';
 import { ContactoComponent } from './pages/contacto/contacto/contacto.component';
 
 export const routes: Routes = [

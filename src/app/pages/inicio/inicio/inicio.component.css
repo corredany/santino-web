@@ -1,0 +1,113 @@
+/* .pantalla-completa {
+  margin-top: 165px;
+  width: 100%;
+  height: calc(100vh - 165px);
+  background-color: #9e8d41; 
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+} */
+
+.fondo {
+  width: 100%;
+  height: calc(100vh - 165px);
+  margin-top: 165px;
+  background-image: url("/img/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  /* position: relative;  */
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* o usa vw para hacerlo responsivo */
+  height: auto;
+}
+
+.overlay {
+  width: 100%;
+  height: calc(100vh - 165px);
+  background-color: #1b1710a2;
+}
+
+
+
+/* .hero {
+  width: 100%;
+  height: calc(100vh - 165px);
+  object-fit: cover;
+  display: block;
+  margin-top: 165px;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/img/fondo.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+} */
+
+.hero {
+  width: 100%;
+  height: calc(100vh - 165px);
+  object-fit: cover;
+  display: block;
+  margin-top: 165px;
+  align-items: center;
+  justify-content: center;
+  background-image: 
+    url("/img/santino-logo.png"),
+    url("/img/fondo.png");
+  background-color:#1B1710;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* 
+
+.contenido {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.decoracion {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.cta {
+  background-color: #EDDC94;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.cta:hover {
+  background-color: #d9c87c;
+} */
