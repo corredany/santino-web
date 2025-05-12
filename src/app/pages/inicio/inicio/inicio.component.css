@@ -10,6 +10,10 @@
   font-size: 24px;
 } */
 
+*{
+  font-family: 'Epilogue', sans-serif;
+}
+
 .fondo {
   width: 100%;
   height: calc(100vh - 165px);
@@ -25,9 +29,10 @@
   width: 50%;
   height: auto;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 40px;
   z-index: 1;
 }
 
@@ -40,45 +45,6 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-}
-
-/* .hero {
-  width: 100%;
-  height: calc(100vh - 165px);
-  object-fit: cover;
-  display: block;
-  margin-top: 165px;
-  align-items: center;
-  justify-content: center;
-  background-image: url("/img/fondo.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  overflow: hidden;
-} */
-
-.hero {
-  width: 100%;
-  height: calc(100vh - 165px);
-  object-fit: cover;
-  display: block;
-  margin-top: 165px;
-  align-items: center;
-  justify-content: center;
-  background-image: 
-    url("/img/santino-logo.png"),
-    url("/img/fondo.png");
-  background-color:#1B1710;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  overflow: hidden;
 }
 
 section div {
@@ -117,40 +83,6 @@ section div {
   height: auto;
   object-fit: contain;
 }
-
-h1{
-  font-family: 'Epilogue', sans-serif;
-}
-
-/* 
-
-.contenido {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-  color: white;
-}
-
-.decoracion {
-  width: 100px;
-  margin-bottom: 20px;
-}
-
-.cta {
-  background-color: #EDDC94;
-  color: black;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-.cta:hover {
-  background-color: #d9c87c;
-} */
 
 .resumen {
   display: flex;
