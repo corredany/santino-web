@@ -21,15 +21,22 @@
 }
 
 .logo {
-  padding-left: 25%;
   width: 50%;
   height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .overlay {
   width: 100%;
   height: calc(100vh - 165px);
   background-color: #1b1710a2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* .hero {
