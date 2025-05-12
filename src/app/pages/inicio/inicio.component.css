@@ -1,7 +1,7 @@
 .pantalla-completa {
   margin-top: 165px;
-  height: calc(100vh - 165px); /* Para que no se salga de la pantalla */
-  background-color: #9e8d41; /* Color de fondo azul */
+  height: calc(100vh - 165px);
+  background-color: #9e8d41; 
   color: black;
   display: flex;
   align-items: center;
