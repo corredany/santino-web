@@ -21,21 +21,18 @@
   /* position: relative;  */
 }
 
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%; /* o usa vw para hacerlo responsivo */
-  height: auto;
-}
-
 .overlay {
   width: 100%;
   height: calc(100vh - 165px);
   background-color: #1b1710a2;
 }
 
+.logo {
+  top: 50%;
+  left: 50%;
+  width: 50%; /* o usa vw para hacerlo responsivo */
+  height: auto;
+}
 
 
 /* .hero {
