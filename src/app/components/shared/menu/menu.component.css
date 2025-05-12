@@ -36,8 +36,7 @@ a{
 a:hover{
   transition: all 0.3s ease;
 	color: #EDDC94;
-	padding-top: 5px;
-
+	transform: translateY(-10px);
 } 
 /*Barrita*/
 nav::before{

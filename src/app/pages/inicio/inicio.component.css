@@ -1,4 +1,10 @@
-:host {
-    margin-top: 100px;
-  }
-  
+.pantalla-completa {
+  margin-top: 165px;
+  height: calc(100vh - 165px); /* Para que no se salga de la pantalla */
+  background-color: #9e8d41; /* Color de fondo azul */
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
