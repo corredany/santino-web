@@ -1,16 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+	line-height: 1.5;
+	font-family: "Garamond", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+  font-size: 50px;
+} 
 nav{
   display: flex;
   justify-content: space-around;
-  background-color: #212121;
-  color: white;
-  padding: 10px;
+  background-color: #1b1710a2;
+  padding:35px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* z-index: 1000; */
+  
 }
 nav a{
-  color: white;
+  color: #F2EEDD;
   text-decoration: none;
+	margin-bottom: 20px;
+	font-weight: 500;
 }
-
-nav a.active{
-  color: red;
+/* nav a.active{
   text-decoration: underline;
+} */
+/*Animacion para la derecha*/
+a{
+	transition: all 0.3s ease;
+}
+a:hover{
+  transition: all 0.3s ease;
+	color: #EDDC94;
+	padding-top: 5px;
+
+} 
+/*Barrita*/
+nav::before{
+	content: '';
+	position: absolute;
+	left: 13%;
+	bottom: 40px;
+	background-color: #EDDC94;
+	height: 3px;
+	box-sizing: border-box;
+	width: 73%;
 }
