@@ -14,6 +14,14 @@
   font-family: 'Epilogue', sans-serif;
 }
 
+#frase-logo {
+  position: relative;
+  color: #F2EEDD;
+  font-size: 40px;
+  text-align: center;
+  max-width: 40%;
+}
+
 .fondo {
   width: 100%;
   height: calc(100vh - 165px);
@@ -28,11 +36,10 @@
 .logo {
   width: 50%;
   height: auto;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 40px;
+  position: relative;
+  transform: none;
+  top: auto;
+  left: auto;
   z-index: 1;
 }
 
@@ -40,10 +47,12 @@
   width: 100%;
   height: calc(100vh - 165px);
   background-color: #1b1710a2;
-  position: relative;
+  position: absolute;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 50px;
   z-index: 1;
 }
 
