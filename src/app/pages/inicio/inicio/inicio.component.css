@@ -24,7 +24,7 @@
 
 .fondo {
   width: 100%;
-  height: calc(100vh - 165px);
+  height: 120vh;
   margin-top: 165px;
   background-image: url("/img/fondo.jpg");
   background-size: cover;
@@ -45,7 +45,7 @@
 
 .overlay {
   width: 100%;
-  height: calc(100vh - 165px);
+  height:120vh;
   background-color: #1b1710a2;
   position: absolute;
   display: flex;
@@ -99,6 +99,7 @@ section div {
   padding: 70px 0;
   background-color: #F2EEDD;
   width: 100%;
+  height: calc(100vh - 165px);
   justify-content: center;
 }
 
