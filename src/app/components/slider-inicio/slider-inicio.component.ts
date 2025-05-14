@@ -20,12 +20,11 @@ export class SliderInicioComponent implements OnInit, AfterViewInit {
   
   // Datos para los slides (podrías moverlos a un servicio si fuera necesario)
   slides = [
-    { image: 'img/img-1.jpg', name: 'James Wilson', profession: 'Software Developer' },
-    { image: 'img/img-2.jpg', name: 'James Wilson', profession: 'Software Developer' },
-    { image: 'img/img-3.jpg', name: 'James Wilson', profession: 'Software Developer' },
-    { image: 'img/img-4.jpg', name: 'James Wilson', profession: 'Software Developer' },
-    { image: 'img/img-5.jpg', name: 'James Wilson', profession: 'Software Developer' },
-    { image: 'img/img-6.jpg', name: 'James Wilson', profession: 'Software Developer' }
+    { image: 'img/img-1.jpg', name: 'Cocina'},
+    { image: 'img/img-2.jpg', name: 'Closets'},
+    { image: 'img/img-3.jpg', name: 'Vestidores'},
+    { image: 'img/img-4.jpg', name: 'Muebles de Baño'},
+    { image: 'img/img-5.jpg', name: 'Diseño de interiores'},
   ];
 
   constructor() { }

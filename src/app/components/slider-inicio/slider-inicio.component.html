@@ -134,16 +134,16 @@
         }
     });
 </script> -->
-
-<swiper-container #swiper init="true" >
-  <swiper-slide *ngFor="let slide of slides">
-    <div class="card-list">
-      <div class="card-item">
-        <img [src]="slide.image" [alt]="slide.name + ' Image'" class="user-image">
-        <h2 class="user-name">{{ slide.name }}</h2>
-        <p class="user-profession">{{ slide.profession }}</p>
-        <button class="message-button">Cotiza ahora</button>
-      </div>
-    </div>
-  </swiper-slide>
-</swiper-container>
+<section>
+    <swiper-container #swiper init="true">
+        <swiper-slide *ngFor="let slide of slides">
+            <div class="card-list">
+                <div class="card-item">
+                    <p class="user-profession">{{ slide.name}}</p>
+                    <img [src]="slide.image" [alt]="slide.name + ' Image'" class="user-image">
+                    <button class="message-button">Conoce más</button>
+                </div>
+            </div>
+        </swiper-slide>
+    </swiper-container>
+</section>
