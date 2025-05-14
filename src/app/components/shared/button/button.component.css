@@ -1,0 +1,26 @@
+.boton-cotiza{
+    background-color: #EDDC94;
+    width: auto;
+    height: 10vh;
+    color: #333; /* Texto oscuro para buen contraste */
+    border: none;
+    padding: 10px 20px;
+    font-size: 40px;
+    /* border-radius: 8px; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  .boton-cotiza:hover {
+    background-color: #e0cf84; /* Un poco más oscuro para el hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .boton-cotiza:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  
