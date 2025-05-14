@@ -54,9 +54,6 @@ export class SliderInicioComponent implements OnInit, AfterViewInit {
         1024: {
           slidesPerView: 3
         },
-        1820: {
-          slidesPerView: 4
-        }
       }
     };
 
