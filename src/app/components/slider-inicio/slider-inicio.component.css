@@ -5,8 +5,11 @@
   font-family: 'Epilogue', 'sans-serif';
 }
 
-section {
+
+.slider-container {
   background-color: #1B1710;
+
+  height: 120vh;
 }
 
 #titulo{

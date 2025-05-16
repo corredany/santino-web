@@ -103,8 +103,15 @@ section div {
   padding: 70px 0;
   background-color: #F2EEDD;
   width: 100%;
-  height: calc(100vh - 165px);
+  height: 120vh;
   justify-content: center;
+}
+/* For screens smaller than 375px */
+@media screen and (max-width: 375px) {
+  .resumen {
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 .resumen-container {
