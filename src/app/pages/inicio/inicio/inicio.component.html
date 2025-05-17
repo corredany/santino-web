@@ -15,23 +15,49 @@
       <div class="imagen-resumen-icon">
         <img src="img/apreton-de-manos (3).png" alt="Apretón de manos" class="img">
       </div>
-      <h1>Comprometidos con tu confianza</h1>
+      <h2>Comprometidos con tu confianza</h2>
     </div>
     <div class="imagen-resumen">
       <div class="imagen-resumen-icon">
         <img src="img/martillo (1).png" alt="Martillo" class="img">
       </div>
-      <h1>Diseñamos con experiencia, fabricamos con valores</h1>
+      <h2>Diseñamos con experiencia, fabricamos con valores</h2>
     </div>
     <div class="imagen-resumen">
       <div class="imagen-resumen-icon">
         <img src="img/calidad.png" alt="Materiales de calidad" class="img">
       </div>
-      <h1>Materiales de calidad</h1>
+      <h2>Materiales de calidad</h2>
     </div>
   </section>
-  <section>
     <app-slider-inicio></app-slider-inicio>
+
+  <section>
+    <h2>¿Comó lo logramos?</h2>
+    <div class="video-container">
+      <p>Cada proyecto comienza con una idea.</p>
+      <video width="320" height="240" controls>
+        <source src="video/Carpinteria.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-container">
+      <p>Tu formas parte de esa idea.</p>
+      <video width="320" height="240" controls>
+        <source src="video/Carpinteria.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-container">
+      <p>Nostros la modelamos</p>
+      <div class="img-comp-container" #imgCompContainer>
+        <div class="img-comp-img">
+          <img src="img/cocina1.jpg" alt="Before image">
+        </div>
+        <div class="img-comp-img img-comp-overlay" #imgCompOverlay>
+          <img src="img/cocina2.jpeg" alt="After image">
+        </div>
+        <div class="img-comp-slider" #imgCompSlider></div>
+      </div>
+    </div>
   </section>
 </main>
 

@@ -143,6 +143,71 @@ section div {
   font-weight: 500;
 }
 
+.img-comp-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.img-comp-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.img-comp-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-comp-overlay {
+  width: 50%;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #1B1710;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-comp-slider::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #1B1710;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img-comp-slider::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #1B1710;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Responsive styles */
 @media(max-width: 767px) {
   .imagen-resumen {

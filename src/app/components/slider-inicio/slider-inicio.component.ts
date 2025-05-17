@@ -61,4 +61,6 @@ export class SliderInicioComponent implements OnInit, AfterViewInit {
     Object.assign(this.swiperRef.nativeElement, swiperParams);
     this.swiperRef.nativeElement.initialize();
   }
+
+  
 }

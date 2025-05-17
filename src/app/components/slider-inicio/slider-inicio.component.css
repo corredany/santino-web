@@ -5,11 +5,13 @@
   font-family: 'Epilogue', 'sans-serif';
 }
 
-
 .slider-container {
   background-color: #1B1710;
+  height: auto;
+}
 
-  height: 120vh;
+.swiper-container {
+  height: 65vh;
 }
 
 #titulo{
@@ -97,26 +99,26 @@ swiper-container::part(bullet) {
 }
 
 swiper-container::part(bullet-active) {
-  background-color: #3498db;
+  background-color: #EDDC94;
   transform: scale(1.2);
 }
 
 /* Bullets dinámicos */
 swiper-container::part(bullet-active-main) {
-  background-color: #3498db;
+  background-color: #EDDC94;
   transform: scale(1.5);
 }
 
 swiper-container::part(bullet-active-prev),
 swiper-container::part(bullet-active-next) {
-  background-color: #3498db;
+  background-color: #EDDC94;
   opacity: 0.8;
   transform: scale(1.2);
 }
 
 swiper-container::part(bullet-active-prev-prev),
 swiper-container::part(bullet-active-next-next) {
-  background-color: #3498db;
+  background-color: #EDDC94;
   opacity: 0.5;
   transform: scale(5);
 }
