@@ -30,6 +30,7 @@
       <h2>Materiales de calidad</h2>
     </div>
   </section>
+  
     <app-slider-inicio></app-slider-inicio>
 
   <section>
@@ -46,18 +47,18 @@
         <source src="video/Carpinteria.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="video-container">
-      <p>Nostros la modelamos</p>
-      <div class="img-comp-container" #imgCompContainer>
-        <div class="img-comp-img">
-          <img src="img/cocina1.jpg" alt="Before image">
-        </div>
-        <div class="img-comp-img img-comp-overlay" #imgCompOverlay>
-          <img src="img/cocina2.jpeg" alt="After image">
-        </div>
-        <div class="img-comp-slider" #imgCompSlider></div>
-      </div>
+    <div>
+      <p>Nosotros la modelamos</p>
+      <p-imagecompare class="shadow-lg rounded-2xl">
+        <ng-template #left>
+            <img src="img/cocina1.jpg" />
+        </ng-template>
+        <ng-template #right>
+            <img src="img/cocina2.jpeg" />
+        </ng-template>
+    </p-imagecompare>
     </div>
+    
   </section>
 </main>
 
