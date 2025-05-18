@@ -33,21 +33,22 @@
   
     <app-slider-inicio></app-slider-inicio>
 
-  <section>
-    <h2>¿Comó lo logramos?</h2>
-    <div class="video-container">
-      <p>Cada proyecto comienza con una idea.</p>
-      <video width="320" height="240" controls>
+  <section class="video-section">
+    <h2 id="video-title">¿Cómo lo logramos?</h2>
+      <p id="video-text">Cada proyecto comienza con una idea.</p>
+      <video controls id="video1">
         <source src="video/Carpinteria.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="video-container">
-      <p>Tu formas parte de esa idea.</p>
-      <video width="320" height="240" controls>
+      
+      <video width="320" height="240" controls id="video2">
         <source src="video/Carpinteria.mp4" type="video/mp4">
       </video>
-    </div>
-    <div>
+      <p id="video-text2">Tu formas parte de esa idea.</p>
+      
+  </section>
+
+  <section class="imagen-comparacion-section">
+    <div class="imagen-comparacion">
       <p>Nosotros la modelamos</p>
       <p-imagecompare class="shadow-lg rounded-2xl">
         <ng-template #left>
@@ -58,8 +59,8 @@
         </ng-template>
     </p-imagecompare>
     </div>
-    
   </section>
+  
 </main>
 
 <!-- <div class="pantalla-completa">
