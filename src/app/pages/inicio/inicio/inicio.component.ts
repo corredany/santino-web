@@ -3,13 +3,15 @@ import { SliderInicioComponent } from "../../../components/slider-inicio/slider-
 import { ButtonComponent } from '../../../components/shared/button/button.component';
 import { ImageCompareModule } from 'primeng/imagecompare';
 import { SliderMarcasComponent } from '../../../components/slider-marcas/slider-marcas.component';
+import { NosotrosButtonComponent } from '../../../components/nosotros-button/nosotros-button.component';
 @Component({
   selector: 'app-inicio',
   imports: [
     SliderInicioComponent, 
     ButtonComponent, 
     ImageCompareModule, 
-    SliderMarcasComponent
+    SliderMarcasComponent,
+    NosotrosButtonComponent
   ],
   templateUrl:'./inicio.component.html',
   styleUrl: './inicio.component.css',

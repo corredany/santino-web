@@ -15,6 +15,13 @@
     --focus-ring: #EDDC94;
 }
 
+.p-button {
+    background: #EDDC94 !important;
+    color: #1B1710 !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+  }
+
 .p-button:hover {
     background-color: #1B1710 !important;
     border-color: #1B1710 !important;
