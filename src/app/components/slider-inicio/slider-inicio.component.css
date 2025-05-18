@@ -239,3 +239,141 @@ swiper-container::part(bullet-active-next-next) {
 :host ::ng-deep .p-carousel-indicator-active .p-carousel-indicator-button {
   background: #EDDC94;
 }
+
+/* Responsive Styles */
+@media screen and (max-width: 1920px) {
+  .carousel-container {
+    height: 85vh;
+    padding: 2.5rem;
+  }
+  
+  .card-item {
+    height: 450px;
+  }
+  
+  .card-image {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .carousel-container {
+    height: 80vh;
+    padding: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .card-item {
+    height: 400px;
+  }
+  
+  .card-image {
+    height: 280px;
+  }
+  
+  .card-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .carousel-container {
+    height: 75vh;
+    padding: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card-item {
+    height: 380px;
+  }
+  
+  .card-image {
+    height: 250px;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    height: 70vh;
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-item {
+    height: 350px;
+    margin: 0.5rem;
+  }
+  
+  .card-image {
+    height: 220px;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-content .p-button {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .carousel-container {
+    height: 65vh;
+    padding: 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-item {
+    height: 320px;
+    margin: 0.25rem;
+  }
+  
+  .card-image {
+    height: 200px;
+  }
+  
+  .card-content {
+    padding: 0.75rem;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-content .p-button {
+    padding: 8px 25px;
+    font-size: 1rem;
+  }
+}
