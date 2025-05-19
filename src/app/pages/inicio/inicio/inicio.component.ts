@@ -2,16 +2,16 @@ import { ChangeDetectionStrategy, Component, AfterViewInit, ElementRef, ViewChil
 import { SliderInicioComponent } from "../../../components/slider-inicio/slider-inicio.component";
 import { ButtonComponent } from '../../../components/shared/button/button.component';
 import { ImageCompareModule } from 'primeng/imagecompare';
-import { SliderMarcasComponent } from '../../../components/slider-marcas/slider-marcas.component';
 import { NosotrosButtonComponent } from '../../../components/nosotros-button/nosotros-button.component';
+import { GalleriaMarcas } from '../../../components/marcas-gallery.component/marcas-gallery.component';
 @Component({
   selector: 'app-inicio',
   imports: [
     SliderInicioComponent, 
     ButtonComponent, 
     ImageCompareModule, 
-    SliderMarcasComponent,
-    NosotrosButtonComponent
+    NosotrosButtonComponent,
+    GalleriaMarcas
   ],
   templateUrl:'./inicio.component.html',
   styleUrl: './inicio.component.css',
