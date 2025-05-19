@@ -1,0 +1,5 @@
+p-galleria {
+  display: flex !important;
+  justify-content: center !important;
+  height: auto;
+}
