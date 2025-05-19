@@ -1,14 +1,4 @@
-/* .pantalla-completa {
-  margin-top: 165px;
-  width: 100%;
-  height: calc(100vh - 165px);
-  background-color: #9e8d41; 
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-} */
+
 
 *{
   font-family: 'Epilogue', sans-serif;
@@ -54,6 +44,7 @@
   justify-content: center;
   gap: 50px;
   z-index: 1;
+  text-align: center;
 }
 
 #frase-logo{
@@ -325,6 +316,11 @@ section div {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .resumen{
+    height: 148vh;
+    width: auto;
   }
 }
 
