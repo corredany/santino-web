@@ -10,7 +10,7 @@
 </section>
 <div class="card">
     <p> Nuestros más recientes productos</p>
-    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '600px' }"
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '1100px' }"
         [numVisible]="4" [circular]="true" [showThumbnails]="true">
         <ng-template pTemplate="item" let-item>
             <img [src]="item.itemImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
@@ -19,13 +19,6 @@
             <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
         </ng-template>
     </p-galleria>
-    <p>Materiales usados para el proyecto</p>
-    <!-- <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
-        [numVisible]="4" [circular]="true" [showThumbnails]="true">
-        <ng-template pTemplate="thumbnail" let-item>
-            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" />
-        </ng-template>
-    </p-galleria>-->
     <p>Aditamentos usados para el proyecto</p>
     <!-- <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
         [numVisible]="4" [circular]="true" [showThumbnails]="true">
@@ -34,5 +27,17 @@
         </ng-template>
     </p-galleria> -->
 </div>
-<app-galleria-marcas id="marcas"></app-galleria-marcas>
-<app-button id="final"></app-button>
+<div>
+<p>Materiales usados para el proyecto</p>
+
+</div>
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
+        [numVisible]="4" [circular]="true" [showThumbnails]="true">
+        <ng-template pTemplate="thumbnail" let-item>
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" />
+        </ng-template>
+    </p-galleria>
+<section id="marcas">
+    <app-galleria-marcas></app-galleria-marcas>
+    <app-button id="final"></app-button>
+</section>

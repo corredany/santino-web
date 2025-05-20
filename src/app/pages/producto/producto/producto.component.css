@@ -80,6 +80,7 @@ p-galleria {
   justify-content: center !important;
   height: auto;
   padding: 70px;
+  background-color: #FEFDF9;
 }
 
 :host ::ng-deep .p-galleria{
@@ -106,8 +107,22 @@ p-galleria {
   background-color: #FEFDF9;
 }
 
+::ng-deep app-galleria-marcas h2{
+  color: #1B1710;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 50px;
+}
+
+#marcas{
+  background-color: #FEFDF9;
+}
+
 #final{
-  margin-top: 80px;
+  padding: 90px 0 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
