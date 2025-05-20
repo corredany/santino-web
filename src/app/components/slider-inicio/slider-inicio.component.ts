@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-slider-inicio',
@@ -9,7 +10,9 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     CommonModule,
     CarouselModule,
-    ButtonModule
+    ButtonModule,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './slider-inicio.component.html',
   styleUrls: ['./slider-inicio.component.css'],
