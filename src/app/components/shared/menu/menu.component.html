@@ -1,7 +1,7 @@
 <nav>
     <a routerLink="/" routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true}">Inicio</a>
-    <a>Servicios</a>
+    <a [routerLink]="['/cocina']" [routerLinkActive]="'active'">Servicios</a>
     <a>Nosotros</a>
     <a [routerLink]="['/contacto']" [routerLinkActive]="'active'">Contacto</a>
 </nav>

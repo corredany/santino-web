@@ -1,0 +1,38 @@
+<section>
+    <div class="fondo">
+        <div class="overlay">
+            <h1 id="titulo-producto">Cocinas</h1>
+            <h2 id="frase-producto">Creamos cocinas a tu medida, donde funcionalidad y estilo se unen con nuestro
+                compromiso contigo</h2>
+            <app-button></app-button>
+        </div>
+    </div>
+</section>
+<div class="card">
+    <p> Nuestros más recientes productos</p>
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '600px' }"
+        [numVisible]="4" [circular]="true" [showThumbnails]="true">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.itemImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
+        </ng-template>
+    </p-galleria>
+    <p>Materiales usados para el proyecto</p>
+    <!-- <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
+        [numVisible]="4" [circular]="true" [showThumbnails]="true">
+        <ng-template pTemplate="thumbnail" let-item>
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" />
+        </ng-template>
+    </p-galleria>-->
+    <p>Aditamentos usados para el proyecto</p>
+    <!-- <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
+        [numVisible]="4" [circular]="true" [showThumbnails]="true">
+        <ng-template pTemplate="thumbnail" let-item>
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" />
+        </ng-template>
+    </p-galleria> -->
+</div>
+<app-galleria-marcas id="marcas"></app-galleria-marcas>
+<app-button id="final"></app-button>
