@@ -11,15 +11,20 @@ export interface Image {
   providedIn: 'root'
 })
 export class PhotoService {
-  
+
   constructor() { }
-  
+
   /**
    * Método que obtiene un array de imágenes simulando una petición asíncrona
    * @returns Promise con array de imágenes
    */
   getImages(): Promise<Image[]> {
-    return Promise.resolve(this.getData());
+    // Reducimos el tiempo de retardo para hacer la prueba más rápida
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(this.getData());
+      }, 300); // Solo 300ms de retraso para simular una petición rápida
+    });
   }
 
   /**

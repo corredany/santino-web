@@ -1,13 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnInit, model } from '@angular/core';
 import { GalleriaModule } from 'primeng/galleria';
 import { PhotoService } from '../../../services/photo.service';
+import { ButtonComponent } from "../../../components/shared/button/button.component";
+import { GalleriaMarcas } from '../../../components/marcas-gallery.component/marcas-gallery.component';
 
 @Component({
   selector: 'app-producto',
-  imports: [GalleriaModule],
+  imports: [GalleriaModule, ButtonComponent, GalleriaMarcas],
   templateUrl: './producto.component.html',
   styleUrl: './producto.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   providers: [PhotoService]
 })
