@@ -3,3 +3,11 @@ p-galleria {
   justify-content: center !important;
   height: auto;
 }
+
+:host ::ng-deep .p-galleria-thumbnails-content {
+  background-color: #84704E; /* Color azul para el fondo del contenido de las miniaturas */
+}
+
+:host ::ng-deep .p-galleria-thumbnails-content .p-galleria-thumbnails-viewport{
+  background-color: #84704E; /* Color azul para el fondo del contenido de las miniaturas */
+}
