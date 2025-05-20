@@ -16,27 +16,51 @@
             <img [src]="item.itemImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
         </ng-template>
         <ng-template pTemplate="thumbnail" let-item>
-            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 100%; display: block;" />
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 95%; display: block;" />
         </ng-template>
     </p-galleria>
-    <p>Aditamentos usados para el proyecto</p>
-    <!-- <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
-        [numVisible]="4" [circular]="true" [showThumbnails]="true">
-        <ng-template pTemplate="thumbnail" let-item>
-            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" />
-        </ng-template>
-    </p-galleria> -->
 </div>
-<div>
-<p>Materiales usados para el proyecto</p>
 
+<div>
+    <p>Materiales usados para el proyecto</p>
 </div>
-    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
-        [numVisible]="4" [circular]="true" [showThumbnails]="true">
+
+<section>
+    <p-galleria 
+    [value]="images" 
+    [autoPlay]="true" 
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptions" 
+    [numVisible]="3"
+    [showThumbnails]="true"
+    [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
+  >
         <ng-template pTemplate="thumbnail" let-item>
-            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" />
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 80%; display: block;" />
         </ng-template>
     </p-galleria>
+</section>
+
+<div>
+    <p>Aditamentos usados para el proyecto</p>
+</div>
+
+<section>
+    <p-galleria 
+    [value]="images" 
+    [autoPlay]="true" 
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptions" 
+    [numVisible]="3"
+    [showThumbnails]="true"
+    [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
+  >
+        <ng-template pTemplate="thumbnail" let-item>
+            <img [src]="item.thumbnailImageSrc" [alt]="item.alt" style="width: 80%; display: block;" />
+        </ng-template>
+    </p-galleria>
+</section>
+
 <section id="marcas">
     <app-galleria-marcas></app-galleria-marcas>
     <app-button id="final"></app-button>
