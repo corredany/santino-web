@@ -1,0 +1,21 @@
+<section style="text-align: center; padding: 2rem 1rem; font-size: 2.5rem;">
+  <h2 class="section-title">Siempre de la mano de las mejores marcas</h2>
+
+  <p-galleria 
+    [value]="images" 
+    [autoPlay]="true" 
+    [circular]="true" 
+    [responsiveOptions]="responsiveOptions" 
+    [numVisible]="4"
+    [showThumbnails]="true"
+    [containerStyle]="{ 'max-width': '200vh', 'margin': '0 auto' }"
+  >
+    <ng-template pTemplate="thumbnail" let-item>
+      <img 
+        [src]="item.thumbnailImageSrc" 
+        [alt]="item.alt" 
+        style="height: 35vh; width: auto; object-fit: contain; display: block; margin: auto;" 
+      />
+    </ng-template>
+  </p-galleria>
+</section>

@@ -10,7 +10,7 @@ nav {
 	display: flex;
 	justify-content: space-around;
 	background-color: #1b1710a2;
-	padding: 35px;
+	padding: 17.5px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -21,7 +21,7 @@ nav {
 nav a {
 	color: #F2EEDD;
 	text-decoration: none;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-weight: 500;
 }
 
@@ -44,9 +44,61 @@ nav::before {
 	content: '';
 	position: absolute;
 	left: 13%;
-	bottom: 40px;
+	bottom: 20px;
 	background-color: #EDDC94;
 	height: 3px;
 	box-sizing: border-box;
 	width: 73%;
+}
+
+/* Responsive styles for menu */
+@media screen and (max-width: 1200px) {
+	* {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	* {
+		font-size: 32px;
+	}
+	nav {
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	* {
+		font-size: 28px;
+	}
+	nav {
+		padding: 12px;
+	}
+	nav::before {
+		bottom: 15px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	* {
+		font-size: 24px;
+	}
+	nav {
+		padding: 10px;
+	}
+	nav::before {
+		bottom: 12px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	* {
+		font-size: 20px;
+	}
+	nav {
+		padding: 8px;
+	}
+	nav::before {
+		bottom: 10px;
+	}
 }
