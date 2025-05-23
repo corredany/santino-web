@@ -34,6 +34,12 @@ export class PhotoService {
   private getData(): Image[] {
     return [
       {
+        itemImageSrc: 'img/fondo.jpg',
+        thumbnailImageSrc: 'img/fondo.jpg',
+        alt: 'fondo',
+        title: 'fondo'
+      },
+      {
         itemImageSrc: 'img/img-1.jpg',
         thumbnailImageSrc: 'img/img-1.jpg',
         alt: 'Description for Image 1',
