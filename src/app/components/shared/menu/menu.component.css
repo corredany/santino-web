@@ -3,14 +3,14 @@
 	font-family: "Garamond", sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	font-size: 50px;
+	font-size: 25px;
 }
 
 nav {
 	display: flex;
 	justify-content: space-around;
 	background-color: #1b1710a2;
-	padding: 17.5px;
+	padding: 8.75px;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -54,51 +54,51 @@ nav::before {
 /* Responsive styles for menu */
 @media screen and (max-width: 1200px) {
 	* {
-		font-size: 40px;
+		font-size: 20px;
 	}
 }
 
 @media screen and (max-width: 992px) {
 	* {
-		font-size: 32px;
+		font-size: 16px;
 	}
 	nav {
-		padding: 15px;
+		padding: 7.5px;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	* {
-		font-size: 28px;
+		font-size: 14px;
 	}
 	nav {
-		padding: 12px;
+		padding: 6px;
 	}
 	nav::before {
-		bottom: 15px;
+		bottom: 7.5px;
 	}
 }
 
 @media screen and (max-width: 576px) {
 	* {
-		font-size: 24px;
+		font-size: 12px;
 	}
 	nav {
-		padding: 10px;
+		padding: 5px;
 	}
 	nav::before {
-		bottom: 12px;
+		bottom: 6px;
 	}
 }
 
 @media screen and (max-width: 375px) {
 	* {
-		font-size: 20px;
+		font-size: 10px;
 	}
 	nav {
-		padding: 8px;
+		padding: 4px;
 	}
 	nav::before {
-		bottom: 10px;
+		bottom: 5px;
 	}
 }
