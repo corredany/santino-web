@@ -1,19 +1,23 @@
-import { ChangeDetectionStrategy, Component, OnInit, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GalleriaModule } from 'primeng/galleria';
-import { PhotoService } from '../../../services/photo.service';
+import { PhotoService, Section } from '../../../services/photo.service';
 import { ButtonComponent } from "../../../components/shared/button/button.component";
 import { GalleriaMarcas } from '../../../components/marcas-gallery.component/marcas-gallery.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-producto',
-  imports: [GalleriaModule, ButtonComponent, GalleriaMarcas],
+  imports: [GalleriaModule, ButtonComponent, GalleriaMarcas, CommonModule],
   templateUrl: './producto.component.html',
   styleUrl: './producto.component.css',
   standalone: true,
   providers: [PhotoService]
 })
 export class ProductoComponent implements OnInit {
-    images: any[] = [];
+    section: Section | null = null;
+    loading = true;
+    error: string | null = null;
 
     responsiveOptions = [
         {
@@ -26,9 +30,31 @@ export class ProductoComponent implements OnInit {
         }
     ];
 
-    constructor(private photoService: PhotoService) {}
+    constructor(
+        private photoService: PhotoService,
+        private route: ActivatedRoute
+    ) {}
 
     ngOnInit() {
-        this.photoService.getImages().then(images => this.images = images);
+        this.route.params.subscribe(params => {
+            const sectionId = params['id'];
+            this.loadSection(sectionId);
+        });
+    }
+
+    private loadSection(sectionId: string) {
+        this.loading = true;
+        this.error = null;
+        
+        this.photoService.getSection(sectionId)
+            .then(section => {
+                this.section = section;
+                this.loading = false;
+            })
+            .catch(error => {
+                this.error = 'Error al cargar la sección';
+                this.loading = false;
+                console.error('Error loading section:', error);
+            });
     }
 }

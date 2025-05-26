@@ -6,6 +6,8 @@
 	font-size: 25px;
 }
 
+/* Estilos para el menú personalizado (comentado) */
+/*
 nav {
 	display: flex;
 	justify-content: space-around;
@@ -25,10 +27,6 @@ nav a {
 	font-weight: 500;
 }
 
-/* nav a.active{
-  text-decoration: underline;
-} */
-/*Animacion para la derecha*/
 a {
 	transition: all 0.3s ease;
 }
@@ -39,7 +37,6 @@ a:hover {
 	transform: translateY(-10px);
 }
 
-/*Barrita*/
 nav::before {
 	content: '';
 	position: absolute;
@@ -50,11 +47,120 @@ nav::before {
 	box-sizing: border-box;
 	width: 73%;
 }
+*/
 
-/* Responsive styles for menu */
+/* Estilos para PrimeNG Menubar adaptados al diseño original */
+:host ::ng-deep .p-menubar {
+	background-color: #1b1710a2;
+	border: none;
+	border-radius: 0;
+	padding: 8.75px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-around;
+}
+
+/* Eliminar el botón de menú móvil por defecto */
+:host ::ng-deep .p-menubar-button {
+	display: none !important;
+}
+
+/* Lista principal del menú */
+:host ::ng-deep .p-menubar-root-list {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+
+/* Items principales del menú */
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem {
+	position: relative;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+	color: #F2EEDD;
+	font-family: "Garamond", sans-serif;
+	font-size: 25px;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	background: transparent;
+	border: none;
+	margin-bottom: 10px;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
+	color: #EDDC94;
+	transform: translateY(-10px);
+	background: transparent;
+}
+
+/* Ocultar iconos para que se vea como el original */
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
+	display: none;
+}
+
+:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+	display: none;
+}
+
+/* Submenús */
+:host ::ng-deep .p-menubar .p-submenu-list {
+	background-color: #1b1710a2;
+	border: none;
+	padding: 0.5rem 0;
+	min-width: 12rem;
+}
+
+:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+	color: #F2EEDD;
+	font-family: "Garamond", sans-serif;
+	font-size: 20px;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link:hover {
+	background-color: rgba(237, 220, 148, 0.1);
+	color: #EDDC94;
+}
+
+/* Línea decorativa inferior */
+:host ::ng-deep .p-menubar::after {
+	content: '';
+	position: absolute;
+	left: 13%;
+	bottom: 20px;
+	background-color: #EDDC94;
+	height: 3px;
+	width: 73%;
+}
+
+/* Estados activos */
+:host ::ng-deep .p-menubar .p-menuitem-link[aria-current="page"] {
+	color: #EDDC94;
+}
+
+/* Responsive styles */
 @media screen and (max-width: 1200px) {
 	* {
 		font-size: 20px;
+	}
+	
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 20px;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 16px;
 	}
 }
 
@@ -62,8 +168,17 @@ nav::before {
 	* {
 		font-size: 16px;
 	}
-	nav {
+
+	:host ::ng-deep .p-menubar {
 		padding: 7.5px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 16px;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 14px;
 	}
 }
 
@@ -71,11 +186,21 @@ nav::before {
 	* {
 		font-size: 14px;
 	}
-	nav {
+
+	:host ::ng-deep .p-menubar {
 		padding: 6px;
 	}
-	nav::before {
+
+	:host ::ng-deep .p-menubar::after {
 		bottom: 7.5px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 14px;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 12px;
 	}
 }
 
@@ -83,11 +208,21 @@ nav::before {
 	* {
 		font-size: 12px;
 	}
-	nav {
+
+	:host ::ng-deep .p-menubar {
 		padding: 5px;
 	}
-	nav::before {
+
+	:host ::ng-deep .p-menubar::after {
 		bottom: 6px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 12px;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 10px;
 	}
 }
 
@@ -95,10 +230,20 @@ nav::before {
 	* {
 		font-size: 10px;
 	}
-	nav {
+
+	:host ::ng-deep .p-menubar {
 		padding: 4px;
 	}
-	nav::before {
+
+	:host ::ng-deep .p-menubar::after {
 		bottom: 5px;
+	}
+
+	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+		font-size: 10px;
+	}
+
+	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
+		font-size: 9px;
 	}
 }

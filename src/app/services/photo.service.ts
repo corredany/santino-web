@@ -7,68 +7,175 @@ export interface Image {
   title: string;
 }
 
+export interface Section {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  backgroundImage: string;
+  images: Image[];
+  materials: {
+    title: string;
+    images: Image[];
+  };
+  accessories: {
+    title: string;
+    images: Image[];
+  };
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class PhotoService {
+  private sections: { [key: string]: Section } = {
+    'cocinas': {
+      id: 'cocinas',
+      title: 'Cocinas',
+      subtitle: 'Diseñamos closets personalizados que organizan tu espacio y reflejan tu estilo, con la calidad que mereces.',
+      description: '',
+      backgroundImage: 'img/cocinacomp.jpeg',
+      images: [
+        {
+          itemImageSrc: 'img/cocina1.jpg',
+          thumbnailImageSrc: 'img/cocina1.jpg',
+          alt: 'Cocina moderna',
+          title: 'Cocina Moderna'
+        },
+        {
+          itemImageSrc: 'img/cocina2.jpeg',
+          thumbnailImageSrc: 'img/cocina2.jpeg',
+          alt: 'Cocina clásica',
+          title: 'Cocina Clásica'
+        }
+      ],
+      materials: {
+        title: 'Materiales usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/material1.jpg',
+            thumbnailImageSrc: 'img/material1.jpg',
+            alt: 'Material 1',
+            title: 'Material Premium'
+          }
+        ]
+      },
+      accessories: {
+        title: 'Aditamentos usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/accesorio1.jpg',
+            thumbnailImageSrc: 'img/accesorio1.jpg',
+            alt: 'Accesorio 1',
+            title: 'Accesorio Premium'
+          }
+        ]
+      }
+    },
+    'closets': {
+      id: 'closets',
+      title: 'Closets',
+      subtitle: 'Diseñamos muebles que transforman tus espacios en lugares únicos',
+      description: 'Creamos muebles personalizados que combinan funcionalidad, durabilidad y diseño exclusivo.',
+      backgroundImage: 'img/closetcomp.jpg',
+      images: [
+        {
+          itemImageSrc: 'img/mueble1.jpg',
+          thumbnailImageSrc: 'img/mueble1.jpg',
+          alt: 'Mueble moderno',
+          title: 'Mueble Moderno'
+        }
+      ],
+      materials: {
+        title: 'Materiales usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/material2.jpg',
+            thumbnailImageSrc: 'img/material2.jpg',
+            alt: 'Material 2',
+            title: 'Material Premium'
+          }
+        ]
+      },
+      accessories: {
+        title: 'Aditamentos usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/accesorio2.jpg',
+            thumbnailImageSrc: 'img/accesorio2.jpg',
+            alt: 'Accesorio 2',
+            title: 'Accesorio Premium'
+          }
+        ]
+      }
+    },
+    'proyectos': {
+      id: 'proyectos',
+      title: 'Proyectos',
+      subtitle: 'Transformamos espacios con proyectos únicos y personalizados',
+      description: 'Desarrollamos proyectos integrales que combinan diseño, funcionalidad y calidad.',
+      backgroundImage: 'img/proyectos-fondo.jpg',
+      images: [
+        {
+          itemImageSrc: 'img/proyecto1.jpg',
+          thumbnailImageSrc: 'img/proyecto1.jpg',
+          alt: 'Proyecto 1',
+          title: 'Proyecto Residencial'
+        }
+      ],
+      materials: {
+        title: 'Materiales usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/material3.jpg',
+            thumbnailImageSrc: 'img/material3.jpg',
+            alt: 'Material 3',
+            title: 'Material Premium'
+          }
+        ]
+      },
+      accessories: {
+        title: 'Aditamentos usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/accesorio3.jpg',
+            thumbnailImageSrc: 'img/accesorio3.jpg',
+            alt: 'Accesorio 3',
+            title: 'Accesorio Premium'
+          }
+        ]
+      }
+    }
+  };
 
   constructor() { }
 
   /**
-   * Método que obtiene un array de imágenes simulando una petición asíncrona
-   * @returns Promise con array de imágenes
+   * Obtiene los datos de una sección específica
+   * @param sectionId Identificador de la sección
+   * @returns Promise con los datos de la sección
    */
-  getImages(): Promise<Image[]> {
-    // Reducimos el tiempo de retardo para hacer la prueba más rápida
+  getSection(sectionId: string): Promise<Section> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(this.getData());
-      }, 300); // Solo 300ms de retraso para simular una petición rápida
+        const section = this.sections[sectionId];
+        if (!section) {
+          throw new Error(`Section ${sectionId} not found`);
+        }
+        resolve(section);
+      }, 300);
     });
   }
 
   /**
-   * Datos de ejemplo para las imágenes
-   * @returns Array de imágenes con propiedades (URL, título, etc)
+   * Obtiene todas las secciones disponibles
+   * @returns Promise con array de secciones
    */
-  private getData(): Image[] {
-    return [
-      {
-        itemImageSrc: 'img/fondo.jpg',
-        thumbnailImageSrc: 'img/fondo.jpg',
-        alt: 'fondo',
-        title: 'fondo'
-      },
-      {
-        itemImageSrc: 'img/img-1.jpg',
-        thumbnailImageSrc: 'img/img-1.jpg',
-        alt: 'Description for Image 1',
-        title: 'Title 1'
-      },
-      {
-        itemImageSrc: 'img/img-2.jpg',
-        thumbnailImageSrc: 'img/img-2.jpg',
-        alt: 'Description for Image 2',
-        title: 'Title 2'
-      },
-      {
-        itemImageSrc: 'img/img-3.jpg',
-        thumbnailImageSrc: 'img/img-3.jpg',
-        alt: 'Descripción Producto 3',
-        title: 'Producto 3'
-      },
-      {
-        itemImageSrc: 'img/img-4.jpg',
-        thumbnailImageSrc: 'img/img-4.jpg',
-        alt: 'Descripción Producto 4',
-        title: 'Producto 4'
-      },
-      {
-        itemImageSrc: 'img/img-5.jpg',
-        thumbnailImageSrc: 'img/img-5.jpg',
-        alt: 'Description for Image 5',
-        title: 'Title 5'
-      }
-    ];
+  getAllSections(): Promise<Section[]> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(Object.values(this.sections));
+      }, 300);
+    });
   }
 }
