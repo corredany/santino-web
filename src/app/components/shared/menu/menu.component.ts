@@ -36,8 +36,8 @@ export class MenuComponent implements OnInit{
                     routerLink: '/servicios/vestidores'
                 },
                 {
-                    label: 'Banos',
-                    routerLink: '/servicios/banos'
+                    label: 'Muebles de baño',
+                    routerLink: '/servicios/muebles-banos'
                 },
                 {
                     label: 'Diseno Interiores',

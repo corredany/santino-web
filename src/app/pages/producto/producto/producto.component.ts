@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GalleriaModule } from 'primeng/galleria';
-import { PhotoService, Section } from '../../../services/photo.service';
+import { PhotoService, Section } from '../../../services/producto.service';
 import { ButtonComponent } from "../../../components/shared/button/button.component";
 import { GalleriaMarcas } from '../../../components/marcas-gallery.component/marcas-gallery.component';
 import { CommonModule } from '@angular/common';
