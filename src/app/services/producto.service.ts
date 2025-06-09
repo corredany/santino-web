@@ -393,7 +393,80 @@ export class PhotoService {
           }
         ]
       }
-    }
+    },
+    'nosotros': {
+        id: 'nosotros',
+        title: 'Nosotros',
+        subtitle: 'Somos una empresa con raíces firmes y visión clara. Con años de experiencia en diseño, fabricación y carpintería, nos mueve un compromiso inquebrantable con cada cliente',
+        description: '',
+        backgroundImage: 'img/vestidorcomp.jpg',
+        images: [
+          {
+            itemImageSrc: 'img/vestidor1.jpg',
+            thumbnailImageSrc: 'img/vestidor1.jpg',
+            alt: 'Vestidor moderno',
+            title: 'Vestidor Moderno'
+          },
+          {
+            itemImageSrc: 'img/vestidor2.jpg',
+            thumbnailImageSrc: 'img/vestidor2.jpg',
+            alt: 'Vestidor moderno',
+            title: 'Vestidor Moderno'
+          },
+          {
+            itemImageSrc: 'img/vestidor3.jpg',
+            thumbnailImageSrc: 'img/vestidor3.jpg',
+            alt: 'Vestidor moderno',
+            title: 'Vestidor Moderno'
+          }
+        ],
+        materials: {
+          title: 'Materiales usados para el proyecto',
+          images: [
+            {
+              itemImageSrc: 'img/granito.jpg',
+              thumbnailImageSrc: 'img/granito.jpg',
+              alt: 'Granito',
+              title: 'Granito'
+            },
+            {
+              itemImageSrc: 'img/madera.jpg',
+              thumbnailImageSrc: 'img/madera.jpg',
+              alt: 'Madera',
+              title: 'Madera'
+            },
+            {
+              itemImageSrc: 'img/marmol.jpg',
+              thumbnailImageSrc: 'img/marmol.jpg',
+              alt: 'Marmol',
+              title: 'Marmol'
+            }
+          ]
+        },
+        accessories: {
+          title: 'Aditamentos usados para el proyecto',
+          images: [
+            {
+              itemImageSrc: 'img/hinge.jpg',
+              thumbnailImageSrc: 'img/hinge.jpg',
+              alt: 'Hinge',
+              title: 'Hinge'
+            },
+            {
+              itemImageSrc: 'img/madera2.jpg',
+              thumbnailImageSrc: 'img/madera2.jpg',
+              alt: 'Madera',
+              title: 'Madera'
+            },
+            {
+              itemImageSrc: 'img/ventana.jpg',
+              thumbnailImageSrc: 'img/ventana.jpg',
+              alt: 'Ventana',
+              title: 'Ventana'
+            }
+          ]
+        }
+      }
   };
 
   constructor() { }

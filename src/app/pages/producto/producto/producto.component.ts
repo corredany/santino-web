@@ -35,58 +35,11 @@ export class ProductoComponent implements OnInit {
         private route: ActivatedRoute
     ) {}
 
-    images: any[] = [];
-
     ngOnInit() {
         this.route.params.subscribe(params => {
             const sectionId = params['id'];
             this.loadSection(sectionId);
         });
-
-        this.images = [
-            {
-                itemImageSrc: 'img/blum.png',
-                thumbnailImageSrc: 'img/blum.png',
-                alt: 'Blum',
-                title: 'Blum'
-            },
-            {
-                itemImageSrc: 'img/arauco.png',
-                thumbnailImageSrc: 'img/arauco.png',
-                alt: 'Arauco',
-                title: 'Arauco'
-            },
-            {
-                itemImageSrc: 'img/brucco.jpg',
-                thumbnailImageSrc: 'img/brucco.jpg',
-                alt: 'Brucco',
-                title: 'Brucco'
-            },
-            {
-                itemImageSrc: 'img/promob.jpg',
-                thumbnailImageSrc: 'img/promob.jpg',
-                alt: 'Promob',
-                title: 'Promob'
-            },
-            {
-                itemImageSrc: 'img/krono.jpg',
-                thumbnailImageSrc: 'img/krono.jpg',
-                alt: 'Kronospan',
-                title: 'Kronospan'
-            },
-            {
-                itemImageSrc: 'img/hafele.jpg',
-                thumbnailImageSrc: 'img/hafele.jpg',
-                alt: 'Hafele',
-                title: 'Hafele'
-            },
-            {
-                itemImageSrc: 'img/rehau.jpg',
-                thumbnailImageSrc: 'img/rehau.jpg',
-                alt: 'Rehau',
-                title: 'Rehau'
-            },
-        ];
     }
 
     private loadSection(sectionId: string) {
