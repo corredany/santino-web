@@ -64,7 +64,7 @@ export class GalleriaMarcas implements OnInit {
                 thumbnailImageSrc: 'img/rehau.jpg',
                 alt: 'Rehau',
                 title: 'Rehau'
-            }
+            },
         ];
     }
 }

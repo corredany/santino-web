@@ -51,7 +51,7 @@ export class PhotoService {
         {
           itemImageSrc: 'img/cocina3.jpg',
           thumbnailImageSrc: 'img/cocina3.jpg',
-          alt: 'Cocina clásica',
+          alt: 'Cocina Clásica',
           title: 'Cocina Clásica'
         }
       ],
@@ -59,20 +59,20 @@ export class PhotoService {
         title: 'Materiales usados para el proyecto',
         images: [
           {
-            itemImageSrc: 'img/granito.jpg',
-            thumbnailImageSrc: 'img/granito.jpg',
+            itemImageSrc: 'img/granito900.jpg',
+            thumbnailImageSrc: 'img/granito900.jpg',
             alt: 'Granito',
             title: 'Granito'
           },
           {
-            itemImageSrc: 'img/madera.jpg',
-            thumbnailImageSrc: 'img/madera.jpg',
+            itemImageSrc: 'img/madera900.jpg',
+            thumbnailImageSrc: 'img/madera900.jpg',
             alt: 'Madera',
             title: 'Madera'
           },
           {
-            itemImageSrc: 'img/marmol.jpg',
-            thumbnailImageSrc: 'img/marmol.jpg',
+            itemImageSrc: 'img/marmol900.jpg',
+            thumbnailImageSrc: 'img/marmol900.jpg',
             alt: 'Marmol',
             title: 'Marmol'
           }
@@ -252,6 +252,79 @@ export class PhotoService {
       id: 'vestidores',
       title: 'Vestidores',
       subtitle: 'Vestidores únicos, hechos para tu estilo de vida y pensados con compromiso en cada detalle.',
+      description: '',
+      backgroundImage: 'img/vestidorcomp.jpg',
+      images: [
+        {
+          itemImageSrc: 'img/vestidor1.jpg',
+          thumbnailImageSrc: 'img/vestidor1.jpg',
+          alt: 'Vestidor moderno',
+          title: 'Vestidor Moderno'
+        },
+        {
+          itemImageSrc: 'img/vestidor2.jpg',
+          thumbnailImageSrc: 'img/vestidor2.jpg',
+          alt: 'Vestidor moderno',
+          title: 'Vestidor Moderno'
+        },
+        {
+          itemImageSrc: 'img/vestidor3.jpg',
+          thumbnailImageSrc: 'img/vestidor3.jpg',
+          alt: 'Vestidor moderno',
+          title: 'Vestidor Moderno'
+        }
+      ],
+      materials: {
+        title: 'Materiales usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/granito.jpg',
+            thumbnailImageSrc: 'img/granito.jpg',
+            alt: 'Granito',
+            title: 'Granito'
+          },
+          {
+            itemImageSrc: 'img/madera.jpg',
+            thumbnailImageSrc: 'img/madera.jpg',
+            alt: 'Madera',
+            title: 'Madera'
+          },
+          {
+            itemImageSrc: 'img/marmol.jpg',
+            thumbnailImageSrc: 'img/marmol.jpg',
+            alt: 'Marmol',
+            title: 'Marmol'
+          }
+        ]
+      },
+      accessories: {
+        title: 'Aditamentos usados para el proyecto',
+        images: [
+          {
+            itemImageSrc: 'img/hinge.jpg',
+            thumbnailImageSrc: 'img/hinge.jpg',
+            alt: 'Hinge',
+            title: 'Hinge'
+          },
+          {
+            itemImageSrc: 'img/madera2.jpg',
+            thumbnailImageSrc: 'img/madera2.jpg',
+            alt: 'Madera',
+            title: 'Madera'
+          },
+          {
+            itemImageSrc: 'img/ventana.jpg',
+            thumbnailImageSrc: 'img/ventana.jpg',
+            alt: 'Ventana',
+            title: 'Ventana'
+          }
+        ]
+      }
+    },
+    'diseno-interiores': {
+      id: 'disenointer',
+      title: 'Diseño de interiores',
+      subtitle: 'Transformamos tus espacios con equilibrio entre estética y funcionalidad, creando ambientes únicos que se adaptan a tu estilo de vida',
       description: '',
       backgroundImage: 'img/vestidorcomp.jpg',
       images: [

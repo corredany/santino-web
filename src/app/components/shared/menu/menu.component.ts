@@ -5,7 +5,7 @@ import { Menubar } from 'primeng/menubar';
 
 @Component({
   selector: 'app-menu',
-  imports: [RouterLink, RouterLinkActive, Menubar],
+  imports: [Menubar],
   templateUrl:'./menu.component.html',
   styleUrl: './menu.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

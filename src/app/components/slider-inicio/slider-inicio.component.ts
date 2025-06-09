@@ -20,11 +20,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class SliderInicioComponent implements OnInit {
   slides = [
-    { image: 'img/img-1.jpg', name: 'Cocina' },
-    { image: 'img/img-2.jpg', name: 'Closets' },
-    { image: 'img/img-3.jpg', name: 'Vestidores' },
-    { image: 'img/img-4.jpg', name: 'Muebles de Baño' },
-    { image: 'img/img-5.jpg', name: 'Diseño de interiores' },
+    { image: 'img/cocina1.jpg', name: 'Cocina' },
+    { image: 'img/closet1.jpg', name: 'Closets' },
+    { image: 'img/vestidor1.jpg', name: 'Vestidores' },
+    { image: 'img/banos1.jpg', name: 'Muebles de Baño' },
+    { image: 'img/vestidorcomp.jpg', name: 'Diseño de interiores' },
   ];
 
   responsiveOptions: any[] = [];
