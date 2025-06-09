@@ -1,7 +1,3 @@
-<!-- <ng-container *ngIf="loading">
-    <div class="loading">Cargando...</div>
-</ng-container> -->
-
 <ng-container *ngIf="error">
     <div class="error">{{ error }}</div>
 </ng-container>
@@ -38,7 +34,7 @@
     </div>
 
     <section class="materials-gallery">
-        <p-galleria [value]="section.materials.images" [autoPlay]="true" [circular]="true"
+        <p-galleria [value]="section.materials?.images" [autoPlay]="true" [circular]="true"
             [responsiveOptions]="responsiveOptions" [numVisible]="3" [showThumbnails]="true" [showIndicators]="false"
             [containerStyle]="{ 'max-width': '100%', 'margin': '0 auto' }">
             <ng-template pTemplate="thumbnail" let-item>
@@ -53,7 +49,7 @@
     </div>
 
     <section class="accessories-gallery">
-        <p-galleria [value]="section.accessories.images" [autoPlay]="true" [circular]="true"
+        <p-galleria [value]="section.accessories?.images" [autoPlay]="true" [circular]="true"
             [responsiveOptions]="responsiveOptions" [numVisible]="3" [showThumbnails]="true" [showIndicators]="false"
             [containerStyle]="{ 'max-width': '100%', 'margin': '0 auto' }">
             <ng-template pTemplate="thumbnail" let-item>
@@ -68,7 +64,5 @@
         <app-galleria-marcas></app-galleria-marcas>
         <app-button id="final"></app-button>
     </section>
-
-
 
 </ng-container>
