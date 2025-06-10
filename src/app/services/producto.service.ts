@@ -34,23 +34,23 @@ export class PhotoService {
       title: 'Nosotros',
       subtitle: 'Somos una empresa con raíces firmes y visión clara. Con años de experiencia en diseño, fabricación y carpintería, nos mueve un compromiso inquebrantable con cada cliente',
       description: '',
-      backgroundImage: 'img/vestidorcomp.jpg',
+      backgroundImage: 'img/nosotros.jpeg',
       images: [
         {
-          itemImageSrc: 'img/vestidor1.jpg',
-          thumbnailImageSrc: 'img/vestidor1.jpg',
+          itemImageSrc: 'img/nosotros1.jpg',
+          thumbnailImageSrc: 'img/nosotros1.jpg',
           alt: 'Vestidor moderno',
           title: 'Vestidor Moderno'
         },
         {
-          itemImageSrc: 'img/vestidor2.jpg',
-          thumbnailImageSrc: 'img/vestidor2.jpg',
+          itemImageSrc: 'img/nosotros2.jpeg',
+          thumbnailImageSrc: 'img/nosotros2.jpeg',
           alt: 'Vestidor moderno',
           title: 'Vestidor Moderno'
         },
         {
-          itemImageSrc: 'img/vestidor3.jpg',
-          thumbnailImageSrc: 'img/vestidor3.jpg',
+          itemImageSrc: 'img/nosotros3.jpeg',
+          thumbnailImageSrc: 'img/nosotros3.jpeg',
           alt: 'Vestidor moderno',
           title: 'Vestidor Moderno'
         }
@@ -167,20 +167,20 @@ export class PhotoService {
         title: 'Materiales usados para el proyecto',
         images: [
           {
-            itemImageSrc: 'img/granito.jpg',
-            thumbnailImageSrc: 'img/granito.jpg',
+            itemImageSrc: 'img/granito900.jpg',
+            thumbnailImageSrc: 'img/granito900.jpg',
             alt: 'Granito',
             title: 'Granito'
           },
           {
-            itemImageSrc: 'img/madera.jpg',
-            thumbnailImageSrc: 'img/madera.jpg',
+            itemImageSrc: 'img/madera900.jpg',
+            thumbnailImageSrc: 'img/madera900.jpg',
             alt: 'Madera',
             title: 'Madera'
           },
           {
-            itemImageSrc: 'img/marmol.jpg',
-            thumbnailImageSrc: 'img/marmol.jpg',
+            itemImageSrc: 'img/marmol900.jpg',
+            thumbnailImageSrc: 'img/marmol900.jpg',
             alt: 'Marmol',
             title: 'Marmol'
           }
@@ -240,20 +240,20 @@ export class PhotoService {
         title: 'Materiales usados para el proyecto',
         images: [
           {
-            itemImageSrc: 'img/granito.jpg',
-            thumbnailImageSrc: 'img/granito.jpg',
+            itemImageSrc: 'img/granito900.jpg',
+            thumbnailImageSrc: 'img/granito900.jpg',
             alt: 'Granito',
             title: 'Granito'
           },
           {
-            itemImageSrc: 'img/madera.jpg',
-            thumbnailImageSrc: 'img/madera.jpg',
+            itemImageSrc: 'img/madera900.jpg',
+            thumbnailImageSrc: 'img/madera900.jpg',
             alt: 'Madera',
             title: 'Madera'
           },
           {
-            itemImageSrc: 'img/marmol.jpg',
-            thumbnailImageSrc: 'img/marmol.jpg',
+            itemImageSrc: 'img/marmol900.jpg',
+            thumbnailImageSrc: 'img/marmol900.jpg',
             alt: 'Marmol',
             title: 'Marmol'
           }
@@ -313,20 +313,20 @@ export class PhotoService {
         title: 'Materiales usados para el proyecto',
         images: [
           {
-            itemImageSrc: 'img/granito.jpg',
-            thumbnailImageSrc: 'img/granito.jpg',
+            itemImageSrc: 'img/granito900.jpg',
+            thumbnailImageSrc: 'img/granito900.jpg',
             alt: 'Granito',
             title: 'Granito'
           },
           {
-            itemImageSrc: 'img/madera.jpg',
-            thumbnailImageSrc: 'img/madera.jpg',
+            itemImageSrc: 'img/madera900.jpg',
+            thumbnailImageSrc: 'img/madera900.jpg',
             alt: 'Madera',
             title: 'Madera'
           },
           {
-            itemImageSrc: 'img/marmol.jpg',
-            thumbnailImageSrc: 'img/marmol.jpg',
+            itemImageSrc: 'img/marmol900.jpg',
+            thumbnailImageSrc: 'img/marmol900.jpg',
             alt: 'Marmol',
             title: 'Marmol'
           }
@@ -361,23 +361,23 @@ export class PhotoService {
       title: 'Diseño de interiores',
       subtitle: 'Transformamos tus espacios con equilibrio entre estética y funcionalidad, creando ambientes únicos que se adaptan a tu estilo de vida',
       description: '',
-      backgroundImage: 'img/vestidorcomp.jpg',
+      backgroundImage: 'img/diseno.jpg',
       images: [
         {
-          itemImageSrc: 'img/vestidor1.jpg',
-          thumbnailImageSrc: 'img/vestidor1.jpg',
+          itemImageSrc: 'img/diseno1.jpeg',
+          thumbnailImageSrc: 'img/diseno1.jpeg',
           alt: 'Vestidor moderno',
           title: 'Vestidor Moderno'
         },
         {
-          itemImageSrc: 'img/vestidor2.jpg',
-          thumbnailImageSrc: 'img/vestidor2.jpg',
+          itemImageSrc: 'img/diseno2.jpeg',
+          thumbnailImageSrc: 'img/diseno2.jpeg',
           alt: 'Vestidor moderno',
           title: 'Vestidor Moderno'
         },
         {
-          itemImageSrc: 'img/vestidor3.jpg',
-          thumbnailImageSrc: 'img/vestidor3.jpg',
+          itemImageSrc: 'img/diseno3.jpeg',
+          thumbnailImageSrc: 'img/diseno3.jpeg',
           alt: 'Vestidor moderno',
           title: 'Vestidor Moderno'
         }
@@ -386,20 +386,20 @@ export class PhotoService {
         title: 'Materiales usados para el proyecto',
         images: [
           {
-            itemImageSrc: 'img/granito.jpg',
-            thumbnailImageSrc: 'img/granito.jpg',
+            itemImageSrc: 'img/granito900.jpg',
+            thumbnailImageSrc: 'img/granito900.jpg',
             alt: 'Granito',
             title: 'Granito'
           },
           {
-            itemImageSrc: 'img/madera.jpg',
-            thumbnailImageSrc: 'img/madera.jpg',
+            itemImageSrc: 'img/madera900.jpg',
+            thumbnailImageSrc: 'img/madera900.jpg',
             alt: 'Madera',
             title: 'Madera'
           },
           {
-            itemImageSrc: 'img/marmol.jpg',
-            thumbnailImageSrc: 'img/marmol.jpg',
+            itemImageSrc: 'img/marmol900.jpg',
+            thumbnailImageSrc: 'img/marmol900.jpg',
             alt: 'Marmol',
             title: 'Marmol'
           }
