@@ -10,7 +10,7 @@
   <div class="fondo" [style.background-image]="imagenes[0] ? 'url(' + imagenes[0].url + ')' : 'url(img/fondo.jpg)'">
     <div class="overlay">
       <h1 id="titulo-producto">{{ seccion?.nombre ?? 'Nosotros' }}</h1>
-      <h2 id="frase-producto">{{ seccion?.descripcion ?? 'Conoce nuestra historia' }}</h2>
+      <h2 id="frase-producto">{{ seccion?.descripcionPrincipal ?? 'Conoce nuestra historia' }}</h2>
       <app-button></app-button>
     </div>
   </div>
