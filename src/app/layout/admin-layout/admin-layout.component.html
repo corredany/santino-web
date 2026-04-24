@@ -1,0 +1,40 @@
+<div class="admin-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span>Panel Admin</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/admin/dashboard" routerLinkActive="active">
+        Dashboard
+      </a>
+      <a routerLink="/admin/secciones" routerLinkActive="active">
+        Secciones
+      </a>
+      <a routerLink="/admin/imagenes" routerLinkActive="active">
+        Imágenes
+      </a>
+      <a routerLink="/admin/videos" routerLinkActive="active">
+        Videos
+      </a>
+      <a routerLink="/admin/materiales" routerLinkActive="active">
+        Materiales
+      </a>
+      <a routerLink="/admin/patrocinadores" routerLinkActive="active">
+        Patrocinadores
+      </a>
+      <a routerLink="/admin/usuarios" routerLinkActive="active">
+        Usuarios
+      </a>
+      <a routerLink="/admin/citas" routerLinkActive="active">
+        Citas
+      </a>
+    </nav>
+
+    <button class="sidebar-logout" (click)="logout()">Cerrar sesión</button>
+  </aside>
+
+  <div class="admin-content">
+    <router-outlet />
+  </div>
+</div>

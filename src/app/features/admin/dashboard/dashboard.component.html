@@ -1,0 +1,13 @@
+<div class="dashboard">
+  <h1>Bienvenido al Panel Administrativo</h1>
+  <p class="subtitle">Gestiona el contenido del sitio web de Santino</p>
+
+  <div class="cards-grid">
+    @for (acceso of accesos; track acceso.ruta) {
+      <a [routerLink]="acceso.ruta" class="card">
+        <span class="card-icon">{{ acceso.icono }}</span>
+        <span class="card-label">{{ acceso.label }}</span>
+      </a>
+    }
+  </div>
+</div>
