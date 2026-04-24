@@ -1,7 +1,9 @@
 export interface Seccion {
   id: number;
   nombre: string;
-  descripcion: string | null;
+  descripcionPrincipal: string | null;
+  descripcionSeccion: string | null;
+  esFija: boolean;
   visible: boolean;
   orden: number;
   creadoPor: number | null;
@@ -12,14 +14,15 @@ export interface Seccion {
 
 export interface CrearSeccionDto {
   nombre: string;
-  descripcion?: string;
-  visible?: boolean;
+  descripcionPrincipal?: string;
+  descripcionSeccion?: string;
   orden?: number;
 }
 
 export interface ActualizarSeccionDto {
   nombre?: string;
-  descripcion?: string;
+  descripcionPrincipal?: string;
+  descripcionSeccion?: string;
   visible?: boolean;
   orden?: number;
 }

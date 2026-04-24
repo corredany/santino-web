@@ -4,6 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { SeccionService } from '../../../core/services/seccion.service';
 import type { Seccion, CrearSeccionDto } from '../../../shared/models/seccion.model';
 
+interface FormSeccion {
+  nombre: string;
+  descripcionPrincipal: string;
+  descripcionSeccion: string;
+  visible: boolean;
+  orden: number;
+}
+
 @Component({
   selector: 'app-secciones',
   standalone: true,
@@ -20,7 +28,7 @@ export class SeccionesComponent implements OnInit {
 
   mostrarForm = false;
   editandoId: number | null = null;
-  form: CrearSeccionDto = { nombre: '', descripcion: '', visible: true, orden: 0 };
+  form: FormSeccion = { nombre: '', descripcionPrincipal: '', descripcionSeccion: '', visible: true, orden: 0 };
 
   ngOnInit() { this.cargar(); }
 
@@ -34,22 +42,38 @@ export class SeccionesComponent implements OnInit {
 
   abrirNuevo() {
     this.editandoId = null;
-    this.form = { nombre: '', descripcion: '', visible: true, orden: 0 };
+    this.form = { nombre: '', descripcionPrincipal: '', descripcionSeccion: '', visible: true, orden: 0 };
     this.mostrarForm = true;
   }
 
   abrirEditar(s: Seccion) {
     this.editandoId = s.id;
-    this.form = { nombre: s.nombre, descripcion: s.descripcion ?? '', visible: s.visible, orden: s.orden };
+    this.form = {
+      nombre: s.nombre,
+      descripcionPrincipal: s.descripcionPrincipal ?? '',
+      descripcionSeccion: s.descripcionSeccion ?? '',
+      visible: s.visible,
+      orden: s.orden,
+    };
     this.mostrarForm = true;
   }
 
   guardar() {
-    const op = this.editandoId
-      ? this.service.actualizar(this.editandoId, this.form)
-      : this.service.crear(this.form);
+    const dto: CrearSeccionDto = {
+      nombre: this.form.nombre,
+      descripcionPrincipal: this.form.descripcionPrincipal || undefined,
+      descripcionSeccion: this.form.descripcionSeccion || undefined,
+      orden: this.form.orden,
+    };
 
-    op.subscribe({ next: () => { this.mostrarForm = false; this.cargar(); } });
+    const op = this.editandoId
+      ? this.service.actualizar(this.editandoId, { ...dto, visible: this.form.visible })
+      : this.service.crear(dto);
+
+    op.subscribe({
+      next: () => { this.mostrarForm = false; this.cargar(); },
+      error: () => { this.error = 'Error al guardar la sección'; },
+    });
   }
 
   toggleVisible(s: Seccion) {

@@ -11,11 +11,17 @@
     <div class="fondo" [style.background-image]="imagenes[0] ? 'url(' + imagenes[0].url + ')' : 'url(img/fondo.jpg)'">
       <div class="overlay">
         <h1 id="titulo-producto">{{ seccion.nombre }}</h1>
-        <h2 id="frase-producto">{{ seccion.descripcion }}</h2>
+        <h2 id="frase-producto">{{ seccion.descripcionPrincipal }}</h2>
         <app-button></app-button>
       </div>
     </div>
   </section>
+
+  @if (seccion.descripcionSeccion) {
+    <section class="descripcion-seccion">
+      <p>{{ seccion.descripcionSeccion }}</p>
+    </section>
+  }
 
   <div class="card">
     <p>Nuestros más recientes proyectos</p>

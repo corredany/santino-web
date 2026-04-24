@@ -19,7 +19,19 @@ export class AuthService {
 
   login(email: string, password: string) {
     return this.http
-      .post<LoginResponse>(`${environment.authApi}/auth/login`, { email, password })
+      .post<LoginResponse>(`${environment.authApi}/auth/login`, { email, contrasena: password })
+      .pipe(
+        tap((res) => {
+          localStorage.setItem(this.TOKEN_KEY, res.accessToken);
+          localStorage.setItem(this.REFRESH_KEY, res.refreshToken);
+        }),
+      );
+  }
+
+  refresh() {
+    const token = localStorage.getItem(this.REFRESH_KEY);
+    return this.http
+      .post<LoginResponse>(`${environment.authApi}/auth/refresh`, { token })
       .pipe(
         tap((res) => {
           localStorage.setItem(this.TOKEN_KEY, res.accessToken);
@@ -36,6 +48,10 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem(this.TOKEN_KEY);
+  }
+
+  getRefreshToken(): string | null {
+    return localStorage.getItem(this.REFRESH_KEY);
   }
 
   isAuthenticated(): boolean {

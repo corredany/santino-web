@@ -25,7 +25,7 @@ export class SeccionService {
   }
 
   toggleVisible(id: number) {
-    return this.http.patch<Seccion>(`${this.url}/${id}/visible`, {});
+    return this.http.put<Seccion>(`${this.url}/${id}/toggle-visible`, {});
   }
 
   eliminar(id: number) {
