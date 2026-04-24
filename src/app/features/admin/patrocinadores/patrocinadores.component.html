@@ -10,15 +10,15 @@
       <input type="text" [(ngModel)]="nombre" placeholder="Ej. Blum">
     </div>
     <div class="form-group">
-      <label>Sitio web</label>
-      <input type="url" [(ngModel)]="sitioWeb" placeholder="https://...">
+      <label>Sitio web *</label>
+      <input type="url" [(ngModel)]="url" placeholder="https://...">
     </div>
   </div>
   <div class="upload-area" (click)="fileInput.click()">
     <input #fileInput type="file" accept="image/*" style="display:none" (change)="onFileChange($event)">
     {{ archivo ? archivo.name : 'Haz clic para seleccionar el logo' }}
   </div>
-  <button class="btn-primary" (click)="crear()" [disabled]="!archivo || !nombre || subiendo">
+  <button class="btn-primary" (click)="crear()" [disabled]="!archivo || !nombre || !url || subiendo">
     {{ subiendo ? 'Guardando...' : 'Agregar patrocinador' }}
   </button>
 </div>
@@ -28,15 +28,10 @@
 <div class="grid-imgs">
   @for (p of patrocinadores; track p.id) {
     <div class="img-card">
-      <img [src]="p.logoUrl" [alt]="p.nombre" style="height:100px; object-fit: contain; padding: 0.5rem;">
+      <img [src]="p.url" [alt]="p.nombre" style="height:100px; object-fit: contain; padding: 0.5rem;">
       <div class="img-card-footer" style="flex-direction: column; align-items: flex-start; padding: 0.5rem; gap: 0.35rem;">
         <span style="font-size:0.85rem; font-weight:600;">{{ p.nombre }}</span>
-        <div style="display:flex; gap:0.5rem;">
-          <span class="badge" [class.badge-on]="p.activo" (click)="toggleActivo(p)" style="cursor:pointer">
-            {{ p.activo ? 'Activo' : 'Inactivo' }}
-          </span>
-          <button class="btn-delete" (click)="eliminar(p.id)">Eliminar</button>
-        </div>
+        <button class="btn-delete" (click)="eliminar(p.id)">Eliminar</button>
       </div>
     </div>
   }

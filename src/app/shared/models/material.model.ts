@@ -1,7 +1,7 @@
 export interface Material {
   id: number;
   url: string;
-  publicId: string;
+  rutaArchivo: string;
   nombre: string;
   descripcion: string | null;
   orden: number;

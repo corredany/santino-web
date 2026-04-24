@@ -14,14 +14,11 @@ export class PatrocinadorService {
 
   crear(archivo: File, dto: CrearPatrocinadorDto) {
     const form = new FormData();
-    form.append('archivo', archivo);
+    form.append('logo', archivo);
     form.append('nombre', dto.nombre);
-    if (dto.sitioWeb) form.append('sitioWeb', dto.sitioWeb);
+    form.append('url', dto.url);
+    if (dto.orden != null) form.append('orden', String(dto.orden));
     return this.http.post<Patrocinador>(this.url, form);
-  }
-
-  toggleActivo(id: number) {
-    return this.http.patch<Patrocinador>(`${this.url}/${id}/activo`, {});
   }
 
   eliminar(id: number) {

@@ -18,7 +18,7 @@ export class PatrocinadoresComponent implements OnInit {
   cargando = true;
   archivo: File | null = null;
   nombre = '';
-  sitioWeb = '';
+  url = '';
   subiendo = false;
 
   ngOnInit() { this.cargar(); }
@@ -37,16 +37,18 @@ export class PatrocinadoresComponent implements OnInit {
   }
 
   crear() {
-    if (!this.archivo || !this.nombre) return;
+    if (!this.archivo || !this.nombre || !this.url) return;
     this.subiendo = true;
-    this.service.crear(this.archivo, { nombre: this.nombre, sitioWeb: this.sitioWeb }).subscribe({
-      next: () => { this.subiendo = false; this.archivo = null; this.nombre = ''; this.sitioWeb = ''; this.cargar(); },
+    this.service.crear(this.archivo, { nombre: this.nombre, url: this.url }).subscribe({
+      next: () => {
+        this.subiendo = false;
+        this.archivo = null;
+        this.nombre = '';
+        this.url = '';
+        this.cargar();
+      },
       error: () => { this.subiendo = false; },
     });
-  }
-
-  toggleActivo(p: Patrocinador) {
-    this.service.toggleActivo(p.id).subscribe({ next: () => this.cargar() });
   }
 
   eliminar(id: number) {

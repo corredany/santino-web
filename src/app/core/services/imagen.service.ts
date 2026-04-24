@@ -9,9 +9,10 @@ export class ImagenService {
   private readonly url = `${environment.contenidoApi}/imagenes`;
 
   listar(seccionId?: number) {
-    const params: Record<string, string> = {};
-    if (seccionId != null) params['seccionId'] = String(seccionId);
-    return this.http.get<Imagen[]>(this.url, { params });
+    if (seccionId != null) {
+      return this.http.get<Imagen[]>(`${this.url}/seccion/${seccionId}`);
+    }
+    return this.http.get<Imagen[]>(this.url);
   }
 
   subir(archivo: File, seccionId?: number, orden?: number) {

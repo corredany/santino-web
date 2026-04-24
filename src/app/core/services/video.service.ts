@@ -9,9 +9,10 @@ export class VideoService {
   private readonly url = `${environment.contenidoApi}/videos`;
 
   listar(seccionId?: number) {
-    const params: Record<string, string> = {};
-    if (seccionId != null) params['seccionId'] = String(seccionId);
-    return this.http.get<Video[]>(this.url, { params });
+    if (seccionId != null) {
+      return this.http.get<Video[]>(`${this.url}/seccion/${seccionId}`);
+    }
+    return this.http.get<Video[]>(this.url);
   }
 
   subir(archivo: File, seccionId?: number, orden?: number) {

@@ -12,6 +12,10 @@ export class SeccionService {
     return this.http.get<Seccion[]>(this.url);
   }
 
+  listarVisibles() {
+    return this.http.get<Seccion[]>(`${this.url}/visibles`);
+  }
+
   obtener(id: number) {
     return this.http.get<Seccion>(`${this.url}/${id}`);
   }

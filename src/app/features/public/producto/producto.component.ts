@@ -43,10 +43,9 @@ export class ProductoComponent implements OnInit {
 
     this.seccionService.listar().subscribe({
       next: (secciones) => {
-        const match = secciones.find(
-          (s) => s.nombre.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '') ===
-                 slug.toLowerCase().replace(/-/g, ' '),
-        );
+        const toSlug = (n: string) =>
+          n.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s+/g, '-');
+        const match = secciones.find((s) => toSlug(s.nombre) === slug);
         if (!match) {
           this.error = 'Sección no encontrada';
           this.loading = false;

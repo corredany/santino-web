@@ -1,10 +1,9 @@
 export interface Patrocinador {
   id: number;
   nombre: string;
-  logoUrl: string;
-  logoPublicId: string;
-  sitioWeb: string | null;
-  activo: boolean;
+  url: string;
+  rutaArchivo: string;
+  orden: number;
   creadoPor: number | null;
   actualizadoPor: number | null;
   creadoEn: string;
@@ -13,5 +12,6 @@ export interface Patrocinador {
 
 export interface CrearPatrocinadorDto {
   nombre: string;
-  sitioWeb?: string;
+  url: string;
+  orden?: number;
 }

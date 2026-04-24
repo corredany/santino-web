@@ -9,9 +9,10 @@ export class MaterialService {
   private readonly url = `${environment.contenidoApi}/materiales`;
 
   listar(seccionId?: number) {
-    const params: Record<string, string> = {};
-    if (seccionId != null) params['seccionId'] = String(seccionId);
-    return this.http.get<Material[]>(this.url, { params });
+    if (seccionId != null) {
+      return this.http.get<Material[]>(`${this.url}/seccion/${seccionId}`);
+    }
+    return this.http.get<Material[]>(this.url);
   }
 
   subir(archivo: File, nombre: string, descripcion?: string, seccionId?: number, orden?: number) {
