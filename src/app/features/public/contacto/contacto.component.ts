@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DatePickerModule } from 'primeng/datepicker';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 
 interface ContactoForm {
@@ -82,14 +82,14 @@ export class ContactoComponent {
             this.exito = true;
             this.enviando = false;
           },
-          error: () => {
-            this.errorEnvio = 'Error al agendar la cita. Por favor intente más tarde.';
+          error: (err: HttpErrorResponse) => {
+            this.errorEnvio = err.error?.error ?? 'Error al agendar la cita. Por favor intente más tarde.';
             this.enviando = false;
           },
         });
       },
-      error: () => {
-        this.errorEnvio = 'Error al registrar sus datos. Por favor intente más tarde.';
+      error: (err: HttpErrorResponse) => {
+        this.errorEnvio = err.error?.error ?? 'Error al registrar sus datos. Por favor intente más tarde.';
         this.enviando = false;
       },
     });
