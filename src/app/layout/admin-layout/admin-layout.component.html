@@ -31,6 +31,13 @@
       </a>
     </nav>
 
+    @if (usuario) {
+      <div class="sidebar-user">
+        <span class="sidebar-user-name">{{ usuario.nombre }}</span>
+        <span class="sidebar-user-email">{{ usuario.email }}</span>
+      </div>
+    }
+
     <button class="sidebar-logout" (click)="logout()">Cerrar sesión</button>
   </aside>
 

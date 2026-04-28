@@ -48,6 +48,29 @@
   color: #f1f5f9;
 }
 
+.sidebar-user {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  background: #0f172a;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.sidebar-user-email {
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .sidebar-logout {
   background: transparent;
   border: 1px solid #475569;

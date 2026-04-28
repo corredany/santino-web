@@ -6,7 +6,7 @@ import type { Usuario, CrearUsuarioDto, ActualizarUsuarioDto } from '../../share
 @Injectable({ providedIn: 'root' })
 export class UsuarioService {
   private readonly http = inject(HttpClient);
-  private readonly url = `${environment.contenidoApi}/usuarios`;
+  private readonly url = `${environment.authApi}/usuarios`;
 
   listar() {
     return this.http.get<Usuario[]>(this.url);

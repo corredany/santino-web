@@ -17,7 +17,7 @@
       </div>
       <div class="form-group">
         <label>Descripción</label>
-        <textarea [(ngModel)]="form.descripcion" rows="3"></textarea>
+        <textarea [(ngModel)]="form.notas" rows="3"></textarea>
       </div>
       <div class="modal-actions">
         <button class="btn-secondary" (click)="editandoId = null">Cancelar</button>
@@ -37,14 +37,14 @@
     @for (c of citas; track c.id) {
       <tr>
         <td>{{ c.id }}</td>
-        <td>{{ c.cliente?.nombre ?? 'Cliente #' + c.clienteId }}</td>
-        <td>{{ c.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td>{{ c.nombreCliente }}</td>
+        <td>{{ c.fecha | date:'dd/MM/yyyy' }} {{ c.hora | slice:0:5 }}</td>
         <td>
           <span class="badge" [class.badge-on]="c.estado === 'confirmada' || c.estado === 'completada'">
             {{ c.estado }}
           </span>
         </td>
-        <td>{{ c.descripcion }}</td>
+        <td>{{ c.notas }}</td>
         <td class="actions">
           <button class="btn-edit" (click)="abrirEditar(c)">Editar</button>
           <button class="btn-delete" (click)="eliminar(c.id)">Eliminar</button>

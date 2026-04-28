@@ -1,15 +1,14 @@
 export interface Cita {
   id: number;
-  clienteId: number;
+  nombreCliente: string;
+  emailCliente: string;
+  telefonoCliente: string;
   fecha: string;
-  descripcion: string | null;
+  hora: string;
   estado: string;
-  cliente?: {
-    id: number;
-    nombre: string;
-    email: string;
-    telefono: string;
-  };
+  notas: string | null;
+  atendidoPor: string | null;
+  creadoEn: string;
 }
 
 export interface CrearCitaDto {
@@ -20,6 +19,6 @@ export interface CrearCitaDto {
 
 export interface ActualizarCitaDto {
   fecha?: string;
-  descripcion?: string;
+  notas?: string;
   estado?: string;
 }

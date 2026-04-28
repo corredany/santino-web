@@ -31,7 +31,7 @@ export class CitasComponent implements OnInit {
 
   abrirEditar(c: Cita) {
     this.editandoId = c.id;
-    this.form = { estado: c.estado, descripcion: c.descripcion ?? '' };
+    this.form = { estado: c.estado, notas: c.notas ?? '' };
   }
 
   guardar() {

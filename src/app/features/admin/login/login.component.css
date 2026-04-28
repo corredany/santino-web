@@ -63,7 +63,36 @@ input:focus {
   border-color: #38bdf8;
 }
 
-button {
+.input-password {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-password input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1;
+}
+
+.toggle-password:hover {
+  background: none;
+  color: #1e293b;
+}
+
+button[type="submit"] {
   padding: 0.75rem;
   background: #1e293b;
   color: white;
@@ -75,11 +104,11 @@ button {
   transition: background 0.15s;
 }
 
-button:hover:not(:disabled) {
+button[type="submit"]:hover:not(:disabled) {
   background: #334155;
 }
 
-button:disabled {
+button[type="submit"]:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }

@@ -19,6 +19,7 @@ export class LoginComponent {
   password = '';
   cargando = false;
   error: string | null = null;
+  mostrarPassword = false;
 
   onSubmit() {
     this.cargando = true;

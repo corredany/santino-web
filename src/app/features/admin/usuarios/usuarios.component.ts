@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UsuarioService } from '../../../core/services/usuario.service';
+import { RolService, Rol } from '../../../core/services/rol.service';
 import type { Usuario, CrearUsuarioDto, ActualizarUsuarioDto } from '../../../shared/models/usuario.model';
 
 @Component({
@@ -13,14 +14,19 @@ import type { Usuario, CrearUsuarioDto, ActualizarUsuarioDto } from '../../../sh
 })
 export class UsuariosComponent implements OnInit {
   private readonly service = inject(UsuarioService);
+  private readonly rolService = inject(RolService);
 
   usuarios: Usuario[] = [];
+  roles: Rol[] = [];
   cargando = true;
   mostrarForm = false;
   editandoId: number | null = null;
-  form: CrearUsuarioDto = { nombre: '', email: '', password: '', rolId: 2 };
+  form: CrearUsuarioDto = { nombre: '', email: '', contrasena: '', rolId: 0 };
 
-  ngOnInit() { this.cargar(); }
+  ngOnInit() {
+    this.cargar();
+    this.rolService.listar().subscribe({ next: (data) => this.roles = data });
+  }
 
   cargar() {
     this.cargando = true;
@@ -32,13 +38,13 @@ export class UsuariosComponent implements OnInit {
 
   abrirNuevo() {
     this.editandoId = null;
-    this.form = { nombre: '', email: '', password: '', rolId: 2 };
+    this.form = { nombre: '', email: '', contrasena: '', rolId: this.roles[0]?.id ?? 0 };
     this.mostrarForm = true;
   }
 
   abrirEditar(u: Usuario) {
     this.editandoId = u.id;
-    this.form = { nombre: u.nombre, email: u.email, password: '', rolId: u.rolId };
+    this.form = { nombre: u.nombre, email: u.email, contrasena: '', rolId: u.rolId };
     this.mostrarForm = true;
   }
 

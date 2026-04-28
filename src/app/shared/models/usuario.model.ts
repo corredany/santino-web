@@ -3,8 +3,7 @@ export interface Usuario {
   nombre: string;
   email: string;
   rolId: number;
-  creadoPor: number | null;
-  actualizadoPor: number | null;
+  rol: { id: number; nombre: string };
   creadoEn: string;
   actualizadoEn: string;
 }
@@ -12,7 +11,7 @@ export interface Usuario {
 export interface CrearUsuarioDto {
   nombre: string;
   email: string;
-  password: string;
+  contrasena: string;
   rolId: number;
 }
 
