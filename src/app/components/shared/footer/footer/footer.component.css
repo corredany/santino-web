@@ -1,16 +1,10 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
-
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
-
-
-*{
-	line-height: 1.5;
-	font-family: "Epilogue", sans-serif;
-	font-optical-sizing: auto;
-	font-style: normal;
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
+* {
+  line-height: 1.5;
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .container{
 	max-width: 1170px;
@@ -34,7 +28,8 @@ ul{
 
 /*Titulo*/
 .footer-col h4{
-	font-size: 25px;
+	font-family: var(--font-display);
+	font-size: clamp(1rem, 1.6vw, 1.3rem);
 	color: #F2EEDD;
 	text-transform: capitalize;
 	margin-bottom: 35px;

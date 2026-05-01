@@ -5,6 +5,7 @@ import { PatrocinadorService } from '../../core/services/patrocinador.service';
 @Component({
   selector: 'app-galleria-marcas',
   templateUrl: './marcas-gallery.component.html',
+  styleUrl: './marcas-gallery.component.css',
   standalone: true,
   imports: [GalleriaModule],
 })

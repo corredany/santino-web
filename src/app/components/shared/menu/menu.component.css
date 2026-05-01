@@ -1,359 +1,261 @@
-* {
-	line-height: 1.5;
-	font-family: "Garamond", sans-serif;
-	font-optical-sizing: auto;
-	font-style: normal;
-	font-size: 25px;
+﻿/* ── Base ── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: transparent;
+  transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Estilos para el menú personalizado (comentado) */
-/*
-nav {
-	display: flex;
-	justify-content: space-around;
-	background-color: #1b1710a2;
-	padding: 8.75px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
+/* ── Scrolled state ── */
+.header.scrolled {
+  background: rgba(27, 23, 16, 0.96);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 4rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
-nav a {
-	color: #F2EEDD;
-	text-decoration: none;
-	margin-bottom: 10px;
-	font-weight: 500;
+/* ── Logo ── */
+.header-logo img {
+  height: 52px;
+  width: auto;
+  transition: height 0.4s ease;
+  filter: brightness(1.1);
 }
 
-a {
-	transition: all 0.3s ease;
+.header.scrolled .header-logo img {
+  height: 40px;
 }
 
-a:hover {
-	transition: all 0.3s ease;
-	color: #EDDC94;
-	transform: translateY(-10px);
+/* ── Nav ── */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-nav::before {
-	content: '';
-	position: absolute;
-	left: 13%;
-	bottom: 20px;
-	background-color: #EDDC94;
-	height: 3px;
-	box-sizing: border-box;
-	width: 73%;
-}
-*/
-
-/* Estilos para PrimeNG Menubar adaptados al diseño original */
-:host ::ng-deep .p-menubar {
-	background-color: #1b1710a2;
-	border: none;
-	border-radius: 0;
-	padding: 8.75px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1000;
-	display: flex;
-	justify-content: center !important;
-	align-items: center;
+.header-nav a {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #F2EEDD;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+  position: relative;
 }
 
-/* Botón de menú móvil - Personalizado */
-:host ::ng-deep .p-menubar-button {
-	display: none !important;
-	background: transparent !important;
-	border: none !important;
-	color: #F2EEDD !important;
-	font-size: 1.5rem !important;
-	padding: 0.5rem !important;
-	margin-left: auto !important;
-	cursor: pointer;
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #EDDC94;
+  transition: width 0.25s ease;
 }
 
-:host ::ng-deep .p-menubar-button:hover {
-	color: #EDDC94 !important;
-	background: transparent !important;
+.header-nav a:hover::after,
+.header-nav a.active::after {
+  width: 100%;
 }
 
-/* Contenedor principal - CLAVE para el centrado */
-:host ::ng-deep .p-menubar .p-menubar-start,
-:host ::ng-deep .p-menubar .p-menubar-end {
-	display: none !important;
+.header-nav a:hover,
+.header-nav a.active {
+  color: #EDDC94;
 }
 
-/* Lista principal del menú - Corregido para centrado perfecto */
-:host ::ng-deep .p-menubar-root-list {
-	display: flex !important;
-	justify-content: center !important;
-	align-items: center !important;
-	width: auto !important;
-	margin: 0 auto !important;
-	padding: 0 !important;
-	background: transparent !important;
-	border: none !important;
-	flex-wrap: nowrap !important;
+/* ── Dropdown ── */
+.nav-dropdown {
+  position: relative;
 }
 
-/* Items principales del menú */
-:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem {
-	position: relative;
-	display: flex !important;
-	align-items: center !important;
+.nav-dropdown-trigger {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: #F2EEDD;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
 }
 
-:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-	color: #F2EEDD;
-	font-family: "Garamond", sans-serif;
-	font-size: 25px;
-	font-weight: 500;
-	padding: 0.5rem 1rem;
-	transition: all 0.3s ease;
-	text-decoration: none;
-	background: transparent;
-	border: none;
-	margin-bottom: 10px;
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
+.nav-dropdown-trigger:hover {
+  color: #EDDC94;
 }
 
-:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
-	color: #EDDC94;
-	transform: translateY(-10px);
-	background: transparent;
+.chevron {
+  font-size: 1.2rem;
+  display: inline-block;
+  transition: transform 0.25s ease;
+  transform: rotate(90deg);
 }
 
-/* Ocultar iconos para que se vea como el original */
-:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-icon {
-	display: none;
+.chevron.open {
+  transform: rotate(-90deg);
 }
 
-:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
-	display: none;
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(27, 23, 16, 0.97);
+  backdrop-filter: blur(10px);
+  list-style: none;
+  padding: 0.75rem 0 0.5rem;
+  margin: 0;
+  min-width: 180px;
+  border-top: 2px solid #EDDC94;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 
-/* Submenús */
-:host ::ng-deep .p-menubar .p-submenu-list {
-	background-color: #1b1710a2;
-	border: none;
-	padding: 0.5rem 0;
-	min-width: 12rem;
+/* Desktop: mostrar con CSS :hover (sin gap ni eventos JS) */
+@media (min-width: 769px) {
+  .nav-dropdown:hover .dropdown-list {
+    display: block;
+  }
 }
 
-:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-	color: #F2EEDD;
-	font-family: "Garamond", sans-serif;
-	font-size: 20px;
-	padding: 0.5rem 1rem;
-	transition: all 0.3s ease;
+.dropdown-list li a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
-:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link:hover {
-	background-color: rgba(237, 220, 148, 0.1);
-	color: #EDDC94;
+.dropdown-list li a::after {
+  display: none;
 }
 
-/* Línea decorativa inferior - Reposicionada */
-:host ::ng-deep .p-menubar::after {
-	content: '';
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 8px;
-	background-color: #EDDC94;
-	height: 3px;
-	width: 60%;
-	max-width: 400px;
+.dropdown-list li a:hover {
+  background: rgba(237, 220, 148, 0.08);
+  color: #EDDC94;
 }
 
-/* Estados activos */
-:host ::ng-deep .p-menubar .p-menuitem-link[aria-current="page"] {
-	color: #EDDC94;
+/* ── CTA button ── */
+.nav-cta {
+  font-family: var(--font-display);
+  font-size: 1rem !important;
+  color: #1b1710 !important;
+  background: #EDDC94;
+  padding: 0.45rem 1.2rem !important;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease, color 0.2s ease !important;
 }
 
-/* Responsive styles - Mejorados */
-@media screen and (max-width: 1200px) {
-	* {
-		font-size: 22px;
-	}
-	
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-		font-size: 22px;
-		padding: 0.4rem 0.8rem;
-	}
-
-	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-		font-size: 18px;
-	}
-
-	:host ::ng-deep .p-menubar::after {
-		width: 65%;
-	}
+.nav-cta::after {
+  display: none !important;
 }
 
-@media screen and (max-width: 992px) {
-	* {
-		font-size: 18px;
-	}
-
-	:host ::ng-deep .p-menubar {
-		padding: 7px;
-	}
-
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-		font-size: 18px;
-		padding: 0.4rem 0.7rem;
-	}
-
-	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-		font-size: 16px;
-	}
-
-	:host ::ng-deep .p-menubar::after {
-		width: 70%;
-		bottom: 6px;
-	}
+.nav-cta:hover {
+  background: #d4c47a;
+  color: #1b1710 !important;
 }
 
-/* BREAKPOINT MÓVIL - Aquí cambia todo */
-@media screen and (max-width: 768px) {
-	* {
-		font-size: 16px;
-	}
-
-	/* Activar botón hamburguesa */
-	:host ::ng-deep .p-menubar-button {
-		display: block !important;
-	}
-
-	:host ::ng-deep .p-menubar {
-		padding: 10px 15px;
-		justify-content: space-between !important;
-	}
-
-	/* Menú móvil - OCULTO por defecto, PrimeNG lo controla */
-	:host ::ng-deep .p-menubar-root-list {
-		justify-content: flex-start !important;
-		margin: 0 !important;
-		flex-direction: column !important;
-		position: absolute !important;
-		top: 100% !important;
-		left: 0 !important;
-		width: 100% !important;
-		background-color: #1b1710a2 !important;
-		padding: 1rem 0 !important;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-		/* REMOVIDO: display y visibility - PrimeNG los maneja */
-	}
-
-	/* Cuando el menú está activo (PrimeNG añade esta clase) */
-	:host ::ng-deep .p-menubar.p-menubar-mobile-active .p-menubar-root-list {
-		display: flex !important;
-	}
-
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem {
-		width: 100% !important;
-		border-bottom: 1px solid rgba(242, 238, 221, 0.1);
-	}
-
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-		font-size: 16px;
-		padding: 1rem 1.5rem;
-		margin-bottom: 0;
-		justify-content: flex-start !important;
-		width: 100%;
-		text-align: left;
-	}
-
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:hover {
-		transform: none;
-		background-color: rgba(237, 220, 148, 0.1);
-	}
-
-	/* Línea decorativa móvil */
-	:host ::ng-deep .p-menubar::after {
-		display: none;
-	}
-
-	/* Submenús móvil */
-	:host ::ng-deep .p-menubar .p-submenu-list {
-		position: static !important;
-		box-shadow: none !important;
-		background-color: rgba(27, 23, 16, 0.8) !important;
-		margin-left: 1rem;
-	}
-
-	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-		font-size: 14px;
-		padding: 0.75rem 2rem;
-	}
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
 }
 
-@media screen and (max-width: 576px) {
-	* {
-		font-size: 14px;
-	}
-
-	:host ::ng-deep .p-menubar {
-		padding: 8px 12px;
-	}
-
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-		font-size: 15px;
-		padding: 0.9rem 1.2rem;
-	}
-
-	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-		font-size: 13px;
-		padding: 0.7rem 1.8rem;
-	}
-
-	:host ::ng-deep .p-menubar-button {
-		font-size: 1.3rem !important;
-	}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #F2EEDD;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-@media screen and (max-width: 400px) {
-	* {
-		font-size: 13px;
-	}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-	:host ::ng-deep .p-menubar {
-		padding: 6px 10px;
-	}
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
 
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-		font-size: 14px;
-		padding: 0.8rem 1rem;
-	}
+  .header.scrolled {
+    padding: 0.7rem 1.5rem;
+  }
 
-	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-		font-size: 12px;
-		padding: 0.6rem 1.5rem;
-	}
+  .hamburger {
+    display: flex;
+  }
 
-	:host ::ng-deep .p-menubar-button {
-		font-size: 1.2rem !important;
-		padding: 0.4rem !important;
-	}
-}
+  .header-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(27, 23, 16, 0.97);
+    padding: 1rem 0;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
 
-/* Ajuste específico para pantallas muy pequeñas */
-@media screen and (max-width: 350px) {
-	:host ::ng-deep .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
-		font-size: 13px;
-		padding: 0.7rem 0.8rem;
-	}
-	
-	:host ::ng-deep .p-menubar .p-submenu-list .p-menuitem-link {
-		font-size: 11px;
-		padding: 0.5rem 1.2rem;
-	}
+  .header-nav.open {
+    display: flex;
+  }
+
+  .header-nav a,
+  .nav-dropdown-trigger {
+    width: 100%;
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(242,238,221,0.07);
+  }
+
+  .header-nav a::after {
+    display: none;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown.open .dropdown-list {
+    display: block;
+  }
+
+  .dropdown-list {
+    position: static;
+    transform: none;
+    border-top: none;
+    border-left: 2px solid #EDDC94;
+    margin-left: 2rem;
+    box-shadow: none;
+    background: rgba(27, 23, 16, 0.5);
+    padding: 0.25rem 0;
+  }
+
+  .nav-cta {
+    margin: 0.5rem 2rem;
+    width: calc(100% - 4rem);
+    text-align: center;
+  }
 }

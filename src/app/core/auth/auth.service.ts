@@ -41,19 +41,23 @@ export class AuthService {
   refresh() {
     const token = localStorage.getItem(this.REFRESH_KEY);
     return this.http
-      .post<LoginResponse>(`${environment.authApi}/auth/refresh`, { token })
+      .post<{ accessToken: string }>(`${environment.authApi}/auth/refresh`, { token })
       .pipe(
         tap((res) => {
           localStorage.setItem(this.TOKEN_KEY, res.accessToken);
-          localStorage.setItem(this.REFRESH_KEY, res.refreshToken);
         }),
       );
   }
 
-  logout(): void {
+  /** Elimina los tokens sin redirigir. Úsalo desde guards/interceptors. */
+  clearTokens(): void {
     localStorage.removeItem(this.TOKEN_KEY);
     localStorage.removeItem(this.REFRESH_KEY);
     localStorage.removeItem(this.USER_KEY);
+  }
+
+  logout(): void {
+    this.clearTokens();
     this.router.navigate(['/admin/login']);
   }
 
@@ -70,7 +74,31 @@ export class AuthService {
     return localStorage.getItem(this.REFRESH_KEY);
   }
 
+  /** Decodifica el payload de un JWT sin librerías externas. */
+  private decodePayload(token: string): { exp?: number } | null {
+    try {
+      const base64Url = token.split('.')[1];
+      if (!base64Url) return null;
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      // JWT omite el padding '=' — atob lo necesita en algunos entornos
+      const padded = base64 + '='.repeat((4 - (base64.length % 4)) % 4);
+      return JSON.parse(atob(padded));
+    } catch {
+      return null;
+    }
+  }
+
+  /** Devuelve true si el token ya expiró o no tiene claim `exp`. */
+  isTokenExpired(token: string): boolean {
+    const payload = this.decodePayload(token);
+    if (!payload?.exp) return true;
+    // exp está en segundos, Date.now() en milisegundos
+    return Date.now() >= payload.exp * 1000;
+  }
+
+  /** True solo si el access token existe Y no ha expirado. */
   isAuthenticated(): boolean {
-    return !!this.getToken();
+    const token = this.getToken();
+    return !!token && !this.isTokenExpired(token);
   }
 }

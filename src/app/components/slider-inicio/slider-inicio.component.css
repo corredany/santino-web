@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Epilogue', 'sans-serif';
+  font-family: var(--font-body);
 }
 
 .slider-container {
@@ -130,9 +130,10 @@ swiper-container::part(bullet-active-next-next) {
 }
 
 .section-title {
+  font-family: var(--font-display);
   text-align: center;
   margin-bottom: 3rem;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
   color: #FEFDF9;
 }
 

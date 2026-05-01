@@ -3,16 +3,30 @@
 @import "primeicons/primeicons.css";
 /* PrimeNG Theme Customization */
 :root {
-    --primary-color: #EDDC94;
-    --primary-color-text: #1B1710;
-    --surface-ground: #FEFDF9;
-    --surface-section: #FEFDF9;
-    --surface-card: #FEFDF9;
-    --surface-overlay: #FEFDF9;
-    --surface-border: #EDDC94;
-    --text-color: #1B1710;
-    --text-color-secondary: #1B1710;
-    --focus-ring: #EDDC94;
+    /* ── Tipografía ── */
+    --font-display: "EB Garamond", serif;   /* headings, hero, nav */
+    --font-body:    "Epilogue", sans-serif; /* cuerpo, UI          */
+
+    /* ── Marca ── */
+    --color-gold:        #EDDC94;
+    --color-dark:        #1B1710;
+    --color-cream:       #FEFDF9;
+    --color-text-light:  #F2EEDD;
+
+    /* ── Header ── */
+    --header-height: 84px;
+
+    /* ── PrimeNG ── */
+    --primary-color:         #EDDC94;
+    --primary-color-text:    #1B1710;
+    --surface-ground:        #FEFDF9;
+    --surface-section:       #FEFDF9;
+    --surface-card:          #FEFDF9;
+    --surface-overlay:       #FEFDF9;
+    --surface-border:        #EDDC94;
+    --text-color:            #1B1710;
+    --text-color-secondary:  #1B1710;
+    --focus-ring:            #EDDC94;
 }
 
 .p-button {
@@ -48,8 +62,10 @@
 } */
 
 
+html,
 body {
     margin: 0;
+    font-family: var(--font-body);
 }
 
 /* ── Estilos compartidos del panel admin ── */
