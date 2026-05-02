@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { PublicLayoutComponent } from './layout/public-layout/public-layout.component';
 import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
 import { authGuard } from './core/auth/auth.guard';
+import { rolGuard } from './core/auth/rol.guard';
 
 export const routes: Routes = [
   // Sitio público — envuelto en PublicLayout (menu + footer)
@@ -77,11 +78,13 @@ export const routes: Routes = [
       },
       {
         path: 'usuarios',
+        canActivate: [rolGuard(['admin'])],
         loadComponent: () =>
           import('./features/admin/usuarios/usuarios.component').then((m) => m.UsuariosComponent),
       },
       {
         path: 'citas',
+        canActivate: [rolGuard(['admin', 'recepcionista'])],
         loadComponent: () =>
           import('./features/admin/citas/citas.component').then((m) => m.CitasComponent),
       },

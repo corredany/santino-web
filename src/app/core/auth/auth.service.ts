@@ -9,6 +9,7 @@ export interface UsuarioSesion {
   nombre: string;
   email: string;
   rolId: number;
+  rolNombre: string;
 }
 
 export interface LoginResponse {
@@ -63,7 +64,16 @@ export class AuthService {
 
   getUsuario(): UsuarioSesion | null {
     const data = localStorage.getItem(this.USER_KEY);
-    return data ? JSON.parse(data) : null;
+    if (!data) return null;
+    const usuario: UsuarioSesion = JSON.parse(data);
+    if (!usuario.rolNombre) {
+      const payload = this.decodePayload(this.getToken() ?? '');
+      if (payload && (payload as any).rolNombre) {
+        usuario.rolNombre = (payload as any).rolNombre;
+        localStorage.setItem(this.USER_KEY, JSON.stringify(usuario));
+      }
+    }
+    return usuario;
   }
 
   getToken(): string | null {

@@ -5,36 +5,18 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a routerLink="/admin/dashboard" routerLinkActive="active">
-        Dashboard
-      </a>
-      <a routerLink="/admin/secciones" routerLinkActive="active">
-        Secciones
-      </a>
-      <a routerLink="/admin/imagenes" routerLinkActive="active">
-        Imágenes
-      </a>
-      <a routerLink="/admin/videos" routerLinkActive="active">
-        Videos
-      </a>
-      <a routerLink="/admin/materiales" routerLinkActive="active">
-        Materiales
-      </a>
-      <a routerLink="/admin/patrocinadores" routerLinkActive="active">
-        Patrocinadores
-      </a>
-      <a routerLink="/admin/usuarios" routerLinkActive="active">
-        Usuarios
-      </a>
-      <a routerLink="/admin/citas" routerLinkActive="active">
-        Citas
-      </a>
+      @for (item of navItems; track item.ruta) {
+        <a [routerLink]="item.ruta" routerLinkActive="active">
+          {{ item.label }}
+        </a>
+      }
     </nav>
 
     @if (usuario) {
       <div class="sidebar-user">
         <span class="sidebar-user-name">{{ usuario.nombre }}</span>
         <span class="sidebar-user-email">{{ usuario.email }}</span>
+        <span class="sidebar-user-rol">{{ usuario.rolNombre }}</span>
       </div>
     }
 

@@ -71,6 +71,13 @@
   text-overflow: ellipsis;
 }
 
+.sidebar-user-rol {
+  font-size: 0.7rem;
+  color: #0ea5e9;
+  text-transform: capitalize;
+  margin-top: 0.15rem;
+}
+
 .sidebar-logout {
   background: transparent;
   border: 1px solid #475569;
