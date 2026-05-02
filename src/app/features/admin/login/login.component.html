@@ -2,6 +2,7 @@
   <div class="login-card">
     <img src="img/santino.png" alt="Santino" class="login-logo">
     <h1>Panel Administrativo</h1>
+    <hr class="gold-divider">
 
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -14,7 +15,7 @@
         <div class="input-password">
           <input [type]="mostrarPassword ? 'text' : 'password'" id="password" [(ngModel)]="password" name="password" required autocomplete="current-password">
           <button type="button" class="toggle-password" (click)="mostrarPassword = !mostrarPassword">
-            {{ mostrarPassword ? '🙈' : '👁️' }}
+            <i [class]="mostrarPassword ? 'pi pi-eye-slash' : 'pi pi-eye'"></i>
           </button>
         </div>
       </div>

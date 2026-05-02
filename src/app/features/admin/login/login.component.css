@@ -1,13 +1,13 @@
 .login-page {
   min-height: 100vh;
-  background: #1e293b;
+  background: #1B1710;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .login-card {
-  background: white;
+  background: #FEFDF9;
   border-radius: 12px;
   padding: 2.5rem;
   width: 100%;
@@ -16,19 +16,29 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4);
 }
 
 .login-logo {
-  width: 160px;
+  width: 150px;
   height: auto;
 }
 
 h1 {
-  font-size: 1.3rem;
-  color: #1e293b;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1B1710;
   margin: 0;
   text-align: center;
+}
+
+.gold-divider {
+  width: 48px;
+  height: 2px;
+  background: #EDDC94;
+  border: none;
+  margin: -0.75rem 0 0;
 }
 
 form {
@@ -45,22 +55,27 @@ form {
 }
 
 label {
-  font-size: 0.875rem;
-  color: #475569;
+  font-size: 0.85rem;
+  color: #4a3f2f;
   font-weight: 500;
+  font-family: var(--font-body);
 }
 
 input {
   padding: 0.6rem 0.75rem;
-  border: 1px solid #cbd5e1;
+  border: 1px solid rgba(27,23,16,0.2);
   border-radius: 6px;
   font-size: 0.95rem;
   outline: none;
-  transition: border-color 0.15s;
+  background: white;
+  color: #1B1710;
+  font-family: var(--font-body);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 input:focus {
-  border-color: #38bdf8;
+  border-color: #EDDC94;
+  box-shadow: 0 0 0 3px rgba(237,220,148,0.3);
 }
 
 .input-password {
@@ -71,41 +86,49 @@ input:focus {
 
 .input-password input {
   width: 100%;
-  padding-right: 2.5rem;
+  padding-right: 2.75rem;
+  box-sizing: border-box;
 }
 
 .toggle-password {
   position: absolute;
-  right: 0.5rem;
+  right: 0.6rem;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   margin: 0;
-  font-size: 1rem;
-  color: #64748b;
-  line-height: 1;
+  color: #a89880;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
 }
 
 .toggle-password:hover {
-  background: none;
-  color: #1e293b;
+  color: #1B1710;
+}
+
+.toggle-password i {
+  font-size: 1rem;
 }
 
 button[type="submit"] {
   padding: 0.75rem;
-  background: #1e293b;
-  color: white;
+  background: #EDDC94;
+  color: #1B1710;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
   cursor: pointer;
   margin-top: 0.5rem;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 
 button[type="submit"]:hover:not(:disabled) {
-  background: #334155;
+  background: #1B1710;
+  color: #F2EEDD;
 }
 
 button[type="submit"]:disabled {
@@ -114,7 +137,7 @@ button[type="submit"]:disabled {
 }
 
 .error-msg {
-  color: #ef4444;
+  color: #dc2626;
   font-size: 0.875rem;
   text-align: center;
   margin: 0;
