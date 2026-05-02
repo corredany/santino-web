@@ -10,13 +10,13 @@ interface Acceso {
 }
 
 const ACCESOS: Acceso[] = [
-  { label: 'Secciones',      ruta: '/admin/secciones',      icono: '📂', roles: ['admin', 'editor'] },
-  { label: 'Imágenes',       ruta: '/admin/imagenes',       icono: '🖼️', roles: ['admin', 'editor'] },
-  { label: 'Videos',         ruta: '/admin/videos',         icono: '🎬', roles: ['admin', 'editor'] },
-  { label: 'Materiales',     ruta: '/admin/materiales',     icono: '📄', roles: ['admin', 'editor'] },
-  { label: 'Patrocinadores', ruta: '/admin/patrocinadores', icono: '🏷️', roles: ['admin', 'editor'] },
-  { label: 'Usuarios',       ruta: '/admin/usuarios',       icono: '👤', roles: ['admin'] },
-  { label: 'Citas',          ruta: '/admin/citas',          icono: '📅', roles: ['admin', 'recepcionista'] },
+  { label: 'Secciones',      ruta: '/admin/secciones',      icono: 'pi-th-large',    roles: ['admin', 'editor'] },
+  { label: 'Imágenes',       ruta: '/admin/imagenes',       icono: 'pi-images',      roles: ['admin', 'editor'] },
+  { label: 'Videos',         ruta: '/admin/videos',         icono: 'pi-video',       roles: ['admin', 'editor'] },
+  { label: 'Materiales',     ruta: '/admin/materiales',     icono: 'pi-folder-open', roles: ['admin', 'editor'] },
+  { label: 'Patrocinadores', ruta: '/admin/patrocinadores', icono: 'pi-star',        roles: ['admin', 'editor'] },
+  { label: 'Usuarios',       ruta: '/admin/usuarios',       icono: 'pi-users',       roles: ['admin'] },
+  { label: 'Citas',          ruta: '/admin/citas',          icono: 'pi-calendar',    roles: ['admin', 'recepcionista'] },
 ];
 
 @Component({
