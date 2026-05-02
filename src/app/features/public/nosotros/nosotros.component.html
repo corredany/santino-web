@@ -50,12 +50,16 @@
   }
 
   <!-- ── Video ── -->
-  <section class="video-section">
-    <h2 class="section-heading">Conócenos</h2>
-    <video controls>
-      <source src="video/videonosotros2.mp4" type="video/mp4">
-    </video>
-  </section>
+  @if (videos.length > 0) {
+    <section class="video-section">
+      <h2 class="section-heading">Conócenos</h2>
+      @for (video of videos; track video.id) {
+        <video controls>
+          <source [src]="video.url" type="video/mp4">
+        </video>
+      }
+    </section>
+  }
 
   <!-- ── Mapa ── -->
   <section class="map-section">

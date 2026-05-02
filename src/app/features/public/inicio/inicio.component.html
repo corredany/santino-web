@@ -35,12 +35,16 @@
   <section class="video-section">
     <h2 id="video-title">¿Cómo lo logramos?</h2>
     <p id="video-text">Cada proyecto comienza con una idea.</p>
-    <video controls id="video1">
-      <source src="video/inicio1.mp4" type="video/mp4">
-    </video>
-    <video controls id="video2">
-      <source src="video/inicio2.mp4" type="video/mp4">
-    </video>
+    @if (video(1)) {
+      <video controls id="video1">
+        <source [src]="video(1)" type="video/mp4">
+      </video>
+    }
+    @if (video(2)) {
+      <video controls id="video2">
+        <source [src]="video(2)" type="video/mp4">
+      </video>
+    }
     <p id="video-text2">Tu formas parte de esa idea.</p>
   </section>
 
@@ -61,9 +65,11 @@
   <section class="imagen-comparacion-section">
     <div class="imagen-comparacion">
       <p>Lo construimos</p>
-      <video width="1000vh" height="auto" controls>
-        <source src="video/inicio3.mp4" type="video/mp4">
-      </video>
+      @if (video(3)) {
+        <video width="1000vh" height="auto" controls>
+          <source [src]="video(3)" type="video/mp4">
+        </video>
+      }
     </div>
   </section>
 
@@ -79,9 +85,11 @@
 
   <section class="nosotos-section">
     <h2>Más que diseñar cocinas, construimos confianza</h2>
-    <video width="1000vh" height="auto" controls>
-      <source src="video/inicio4.mp4" type="video/mp4">
-    </video>
+    @if (video(4)) {
+      <video width="1000vh" height="auto" controls>
+        <source [src]="video(4)" type="video/mp4">
+      </video>
+    }
     <p>Conoce la historia, los valores y la pasión detras de cada proyecto.</p>
     <p>En Santino, cada detalle habla de quienes somos.</p>
     <app-nosotros-button></app-nosotros-button>

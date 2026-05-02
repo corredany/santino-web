@@ -5,8 +5,10 @@ import { ButtonComponent } from '../../../components/shared/button/button.compon
 import { GalleriaMarcas } from '../../../components/marcas-gallery.component/marcas-gallery.component';
 import { SeccionService } from '../../../core/services/seccion.service';
 import { ImagenService } from '../../../core/services/imagen.service';
+import { VideoService } from '../../../core/services/video.service';
 import type { Seccion } from '../../../shared/models/seccion.model';
 import type { Imagen } from '../../../shared/models/imagen.model';
+import type { Video } from '../../../shared/models/video.model';
 
 @Component({
   selector: 'app-nosotros',
@@ -18,9 +20,11 @@ import type { Imagen } from '../../../shared/models/imagen.model';
 export class NosotrosComponent implements OnInit {
   private readonly seccionService = inject(SeccionService);
   private readonly imagenService = inject(ImagenService);
+  private readonly videoService = inject(VideoService);
 
   seccion: Seccion | null = null;
   imagenes: Imagen[] = [];
+  videos: Video[] = [];
   loading = true;
   error: string | null = null;
 
@@ -40,12 +44,19 @@ export class NosotrosComponent implements OnInit {
           return;
         }
         this.seccion = match;
-        this.imagenService.listar(match.id).subscribe({
-          next: (imgs) => {
-            this.imagenes = imgs;
-            this.loading = false;
-          },
-          error: () => { this.loading = false; },
+
+        const id = match.id;
+        let pendientes = 2;
+        const fin = () => { if (--pendientes === 0) this.loading = false; };
+
+        this.imagenService.listar(id).subscribe({
+          next: (imgs) => { this.imagenes = imgs; fin(); },
+          error: () => fin(),
+        });
+
+        this.videoService.listar(id).subscribe({
+          next: (vids) => { this.videos = [...vids].sort((a, b) => a.orden - b.orden); fin(); },
+          error: () => fin(),
         });
       },
       error: () => {
