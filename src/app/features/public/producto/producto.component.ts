@@ -6,8 +6,10 @@ import { ButtonComponent } from '../../../components/shared/button/button.compon
 import { GalleriaMarcas } from '../../../components/marcas-gallery.component/marcas-gallery.component';
 import { SeccionService } from '../../../core/services/seccion.service';
 import { ImagenService } from '../../../core/services/imagen.service';
+import { MaterialService } from '../../../core/services/material.service';
 import type { Seccion } from '../../../shared/models/seccion.model';
 import type { Imagen } from '../../../shared/models/imagen.model';
+import type { Material } from '../../../shared/models/material.model';
 
 @Component({
   selector: 'app-producto',
@@ -20,9 +22,11 @@ export class ProductoComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly seccionService = inject(SeccionService);
   private readonly imagenService = inject(ImagenService);
+  private readonly materialService = inject(MaterialService);
 
   seccion: Seccion | null = null;
   imagenes: Imagen[] = [];
+  materiales: Material[] = [];
   loading = true;
   error: string | null = null;
 
@@ -40,6 +44,7 @@ export class ProductoComponent implements OnInit {
   private cargar(slug: string) {
     this.loading = true;
     this.error = null;
+    this.materiales = [];
 
     this.seccionService.listar().subscribe({
       next: (secciones) => {
@@ -52,14 +57,29 @@ export class ProductoComponent implements OnInit {
           return;
         }
         this.seccion = match;
+
+        let pendientes = 2;
+        const fin = () => { if (--pendientes === 0) this.loading = false; };
+
         this.imagenService.listar(match.id).subscribe({
-          next: (imgs) => {
-            this.imagenes = imgs;
-            this.loading = false;
+          next: (imgs) => { this.imagenes = imgs; fin(); },
+          error: () => fin(),
+        });
+
+        // Carga materiales de la sección; si no hay, carga los globales (seccionId null)
+        this.materialService.listar(match.id).subscribe({
+          next: (mats) => {
+            if (mats.length > 0) {
+              this.materiales = mats;
+              fin();
+            } else {
+              this.materialService.listar().subscribe({
+                next: (all) => { this.materiales = all; fin(); },
+                error: () => fin(),
+              });
+            }
           },
-          error: () => {
-            this.loading = false;
-          },
+          error: () => fin(),
         });
       },
       error: () => {

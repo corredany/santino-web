@@ -21,6 +21,12 @@ export class PatrocinadoresComponent implements OnInit {
   url = '';
   subiendo = false;
 
+  editandoId: number | null = null;
+  editNombre = '';
+  editUrl = '';
+  editOrden: number | undefined;
+  guardando = false;
+
   ngOnInit() { this.cargar(); }
 
   cargar() {
@@ -40,14 +46,27 @@ export class PatrocinadoresComponent implements OnInit {
     if (!this.archivo || !this.nombre || !this.url) return;
     this.subiendo = true;
     this.service.crear(this.archivo, { nombre: this.nombre, url: this.url }).subscribe({
-      next: () => {
-        this.subiendo = false;
-        this.archivo = null;
-        this.nombre = '';
-        this.url = '';
-        this.cargar();
-      },
+      next: () => { this.subiendo = false; this.archivo = null; this.nombre = ''; this.url = ''; this.cargar(); },
       error: () => { this.subiendo = false; },
+    });
+  }
+
+  abrirEdicion(p: Patrocinador) {
+    this.editandoId = p.id;
+    this.editNombre = p.nombre;
+    this.editUrl = p.url;
+    this.editOrden = p.orden;
+  }
+
+  cancelarEdicion() {
+    this.editandoId = null;
+  }
+
+  guardar(id: number) {
+    this.guardando = true;
+    this.service.actualizar(id, { nombre: this.editNombre, url: this.editUrl, orden: this.editOrden }).subscribe({
+      next: () => { this.guardando = false; this.editandoId = null; this.cargar(); },
+      error: () => { this.guardando = false; },
     });
   }
 

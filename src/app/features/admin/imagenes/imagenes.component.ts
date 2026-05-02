@@ -25,6 +25,11 @@ export class ImagenesComponent implements OnInit {
   orden: number | undefined;
   subiendo = false;
 
+  editandoId: number | null = null;
+  editSeccionId: number | null | undefined = undefined;
+  editOrden: number | undefined;
+  guardando = false;
+
   ngOnInit() {
     this.seccionService.listar().subscribe((s) => (this.secciones = s));
     this.cargar();
@@ -52,8 +57,31 @@ export class ImagenesComponent implements OnInit {
     });
   }
 
+  abrirEdicion(img: Imagen) {
+    this.editandoId = img.id;
+    this.editSeccionId = img.seccionId;
+    this.editOrden = img.orden;
+  }
+
+  cancelarEdicion() {
+    this.editandoId = null;
+  }
+
+  guardar(id: number) {
+    this.guardando = true;
+    this.service.actualizar(id, { seccionId: this.editSeccionId ?? null, orden: this.editOrden }).subscribe({
+      next: () => { this.guardando = false; this.editandoId = null; this.cargar(); },
+      error: () => { this.guardando = false; },
+    });
+  }
+
   eliminar(id: number) {
     if (!confirm('¿Eliminar esta imagen?')) return;
     this.service.eliminar(id).subscribe({ next: () => this.cargar() });
+  }
+
+  nombreSeccion(id: number | null): string {
+    if (id == null) return '—';
+    return this.secciones.find((s) => s.id === id)?.nombre ?? String(id);
   }
 }

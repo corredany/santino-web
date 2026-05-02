@@ -32,11 +32,40 @@
 
 <div class="grid-imgs">
   @for (img of imagenes; track img.id) {
-    <div class="img-card">
+    <div class="img-card" [class.editando]="editandoId === img.id">
       <img [src]="img.url" [alt]="'Imagen ' + img.id">
-      <div class="img-card-footer">
-        <button class="btn-delete" (click)="eliminar(img.id)">Eliminar</button>
-      </div>
+
+      @if (editandoId === img.id) {
+        <div class="edit-panel">
+          <div class="form-group">
+            <label>Sección</label>
+            <select [(ngModel)]="editSeccionId">
+              <option [ngValue]="null">Sin sección</option>
+              @for (s of secciones; track s.id) {
+                <option [ngValue]="s.id">{{ s.nombre }}</option>
+              }
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Orden</label>
+            <input type="number" [(ngModel)]="editOrden">
+          </div>
+          <div class="edit-actions">
+            <button class="btn-primary" (click)="guardar(img.id)" [disabled]="guardando">
+              {{ guardando ? 'Guardando...' : 'Guardar' }}
+            </button>
+            <button class="btn-cancel" (click)="cancelarEdicion()">Cancelar</button>
+          </div>
+        </div>
+      } @else {
+        <div class="img-card-footer">
+          <span class="img-meta">{{ nombreSeccion(img.seccionId) }} · orden {{ img.orden }}</span>
+          <div class="img-card-actions">
+            <button class="btn-edit" (click)="abrirEdicion(img)">Editar</button>
+            <button class="btn-delete" (click)="eliminar(img.id)">Eliminar</button>
+          </div>
+        </div>
+      }
     </div>
   }
 </div>

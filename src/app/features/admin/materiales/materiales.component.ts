@@ -27,6 +27,13 @@ export class MaterialesComponent implements OnInit {
   orden: number | undefined;
   subiendo = false;
 
+  editandoId: number | null = null;
+  editNombre = '';
+  editDescripcion = '';
+  editSeccionId: number | null | undefined = undefined;
+  editOrden: number | undefined;
+  guardando = false;
+
   ngOnInit() {
     this.seccionService.listar().subscribe((s) => (this.secciones = s));
     this.cargar();
@@ -54,8 +61,38 @@ export class MaterialesComponent implements OnInit {
     });
   }
 
+  abrirEdicion(m: Material) {
+    this.editandoId = m.id;
+    this.editNombre = m.nombre;
+    this.editDescripcion = m.descripcion ?? '';
+    this.editSeccionId = m.seccionId;
+    this.editOrden = m.orden;
+  }
+
+  cancelarEdicion() {
+    this.editandoId = null;
+  }
+
+  guardar(id: number) {
+    this.guardando = true;
+    this.service.actualizar(id, {
+      nombre: this.editNombre,
+      descripcion: this.editDescripcion || null,
+      seccionId: this.editSeccionId ?? null,
+      orden: this.editOrden,
+    }).subscribe({
+      next: () => { this.guardando = false; this.editandoId = null; this.cargar(); },
+      error: () => { this.guardando = false; },
+    });
+  }
+
   eliminar(id: number) {
     if (!confirm('¿Eliminar este material?')) return;
     this.service.eliminar(id).subscribe({ next: () => this.cargar() });
+  }
+
+  nombreSeccion(id: number | null): string {
+    if (id == null) return '—';
+    return this.secciones.find((s) => s.id === id)?.nombre ?? String(id);
   }
 }

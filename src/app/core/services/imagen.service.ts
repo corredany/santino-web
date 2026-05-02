@@ -23,6 +23,10 @@ export class ImagenService {
     return this.http.post<Imagen>(this.url, form);
   }
 
+  actualizar(id: number, dto: { seccionId?: number | null; orden?: number }) {
+    return this.http.put<Imagen>(`${this.url}/${id}`, dto);
+  }
+
   eliminar(id: number) {
     return this.http.delete<void>(`${this.url}/${id}`);
   }

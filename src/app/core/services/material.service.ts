@@ -25,6 +25,10 @@ export class MaterialService {
     return this.http.post<Material>(this.url, form);
   }
 
+  actualizar(id: number, dto: { nombre?: string; descripcion?: string | null; seccionId?: number | null; orden?: number }) {
+    return this.http.put<Material>(`${this.url}/${id}`, dto);
+  }
+
   eliminar(id: number) {
     return this.http.delete<void>(`${this.url}/${id}`);
   }

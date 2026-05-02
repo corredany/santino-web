@@ -21,6 +21,10 @@ export class PatrocinadorService {
     return this.http.post<Patrocinador>(this.url, form);
   }
 
+  actualizar(id: number, dto: { nombre?: string; url?: string; orden?: number }) {
+    return this.http.put<Patrocinador>(`${this.url}/${id}`, dto);
+  }
+
   eliminar(id: number) {
     return this.http.delete<void>(`${this.url}/${id}`);
   }

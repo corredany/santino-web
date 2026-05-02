@@ -23,6 +23,10 @@ export class VideoService {
     return this.http.post<Video>(this.url, form);
   }
 
+  actualizar(id: number, dto: { seccionId?: number | null; orden?: number }) {
+    return this.http.put<Video>(`${this.url}/${id}`, dto);
+  }
+
   eliminar(id: number) {
     return this.http.delete<void>(`${this.url}/${id}`);
   }

@@ -49,6 +49,25 @@
     }
   </div>
 
+  @if (materiales.length > 0) {
+    <section class="materiales-section">
+      <h2 class="section-heading">Materiales disponibles</h2>
+      <div class="materiales-grid">
+        @for (mat of materiales; track mat.id) {
+          <div class="material-card">
+            <img [src]="mat.url" [alt]="mat.nombre" class="material-img" />
+            <div class="material-info">
+              <span class="material-nombre">{{ mat.nombre }}</span>
+              @if (mat.descripcion) {
+                <span class="material-desc">{{ mat.descripcion }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </section>
+  }
+
   <section id="marcas">
     <app-galleria-marcas></app-galleria-marcas>
     <app-button id="final"></app-button>
