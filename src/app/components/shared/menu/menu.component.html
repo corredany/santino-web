@@ -1,4 +1,4 @@
-<header class="header" [class.scrolled]="scrolled" [class.menu-open]="menuAbierto">
+<header class="header" [class.scrolled]="scrolled" [class.menu-open]="menuAbierto" [class.en-contacto]="enContacto && !scrolled">
 
   <a routerLink="/" class="header-logo" (click)="cerrarMenu()">
     <img src="img/santino.png" alt="Santino" />

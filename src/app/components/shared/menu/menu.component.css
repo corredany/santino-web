@@ -13,6 +13,12 @@
   transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* ── Contacto: tinte sutil antes de hacer scroll ── */
+.header.en-contacto {
+  background: rgba(27, 23, 16, 0.45);
+  backdrop-filter: blur(6px);
+}
+
 /* ── Scrolled state ── */
 .header.scrolled {
   background: rgba(27, 23, 16, 0.96);

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { SeccionService } from '../../../core/services/seccion.service';
 
 interface SeccionNav {
@@ -19,11 +20,13 @@ interface SeccionNav {
 export class MenuComponent implements OnInit {
   private readonly seccionService = inject(SeccionService);
   private readonly cdr = inject(ChangeDetectorRef);
+  private readonly router = inject(Router);
 
   secciones: SeccionNav[] = [];
   scrolled = false;
   menuAbierto = false;
   serviciosAbierto = false;
+  enContacto = false;
 
   @HostListener('window:scroll')
   onScroll() {
@@ -35,6 +38,13 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.enContacto = this.router.url === '/contacto';
+
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e) => {
+      this.enContacto = (e as NavigationEnd).urlAfterRedirects === '/contacto';
+      this.cdr.markForCheck();
+    });
+
     this.seccionService.listarVisibles().subscribe({
       next: (secciones) => {
         this.secciones = secciones.map((s) => ({
